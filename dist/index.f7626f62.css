@@ -1,4 +1,45 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 html {
   font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  background-color: #070724;
+}
+
+.header {
+  padding: 1.6rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #38384f;
+}
+.header__logo {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  font-family: "Antonio", sans-serif;
+  color: #ffffff;
+}
+.header__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.4rem;
+  height: 1.7rem;
+}
+.header__hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */

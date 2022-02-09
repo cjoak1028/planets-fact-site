@@ -1,31 +1,3 @@
-// COLORS
-
-// General colors
-$color-white: #ffffff;
-$color-navy: #070724;
-$color-gray-dark: #38384f;
-$color-gray-light: #838391;
-
-// Planet-specific colors
-$color-mercury: #419ebb;
-$color-venus: #eda249;
-$color-earth: #6f2ed6;
-$color-mars: #d14c32;
-$color-jupiter: #d83a34;
-$color-saturn: #cd5120;
-$color-uranus: #1ec2a4;
-$color-neptune: #2d68f0;
-
-// TYPOGRAPHY
-$font-size-default: 1.4rem;
-$font-size-heading-1: 8rem;
-$font-size-heading-2: 4rem;
-$font-size-heading-3: 1.2rem;
-$font-size-heading-4: 1.1rem;
-
-$font-1: "Antonio", sans-serif;
-$font-2: "Spartan", sans-serif;
-
 // RESET
 *,
 *::after,
@@ -42,4 +14,5 @@ html {
 body {
   box-sizing: border-box;
   font-size: $font-size-default;
+  background-color: $color-navy;
 }
