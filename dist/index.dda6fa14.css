@@ -16,30 +16,28 @@ body {
   background-color: #070724;
 }
 
-.header {
+ul,
+ol {
+  list-style: none;
+}
+
+.navbar {
   padding: 1.6rem 2.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #38384f;
 }
-.header__logo {
+.navbar__logo {
   font-size: 2.8rem;
   text-transform: uppercase;
   font-family: "Antonio", sans-serif;
   color: #ffffff;
 }
-.header__hamburger {
+.navbar__toggle {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.4rem;
-  height: 1.7rem;
 }
-.header__hamburger span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
+.navbar__toggle:hover {
+  cursor: pointer;
 }
-/*# sourceMappingURL=index.f7626f62.css.map */
+/*# sourceMappingURL=index.dda6fa14.css.map */

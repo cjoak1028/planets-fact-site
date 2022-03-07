@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cjoak1028/planets-fact-site#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
+    "core-js": "^3.21.1",
     "parcel": "^2.2.1"
   }
 }
