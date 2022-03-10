@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4em;
+  font-family: $font-spartan;
+  font-weight: $font-normal;
+  line-height: 2.5em;
+}
+
+.heading-1,
+.heading-2 {
+  font-family: $font-antonio;
+  font-weight: $font-medium;
+}
+
+.heading-1 {
+  font-size: 8rem;
+  line-height: 10.3rem;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  line-height: 5.2rem;
+  letter-spacing: -1.5px;
+}
+
+.heading-3,
+.heading-4 {
+  font-family: $font-spartan;
+  font-weight: $font-bold;
+  line-height: 2.5rem;
+}
+
+.heading-3 {
+  font-size: 1.2rem;
+  letter-spacing: 2.6px;
+}
+
+.heading-4 {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
