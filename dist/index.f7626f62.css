@@ -76,6 +76,45 @@ body {
   text-transform: uppercase;
 }
 
+.hidden {
+  height: 0;
+}
+
+.mobile-menu__item a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.mobile-menu .dot {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.mobile-menu .dot--mercury {
+  background-color: #def4fc;
+}
+.mobile-menu .dot--venus {
+  background-color: #f7cc7f;
+}
+.mobile-menu .dot--earth {
+  background-color: #545bfe;
+}
+.mobile-menu .dot--mars {
+  background-color: #ff6a45;
+}
+.mobile-menu .dot--jupiter {
+  background-color: #ecad7a;
+}
+.mobile-menu .dot--saturn {
+  background-color: #fccb6b;
+}
+.mobile-menu .dot--uranus {
+  background-color: #65f0d5;
+}
+.mobile-menu .dot--neptune {
+  background-color: #497efa;
+}
+
 .flex {
   display: flex;
 }
