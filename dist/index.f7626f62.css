@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+body {
+  background-color: #070724;
+}
+
 *,
 *::before,
 *::after {
@@ -32,7 +36,8 @@ body {
 }
 
 .heading-1,
-.heading-2 {
+.heading-2,
+.logo {
   font-family: "Antonio", sans-serif;
   font-weight: 500;
 }
@@ -63,5 +68,27 @@ body {
 .heading-4 {
   font-size: 1.1rem;
   letter-spacing: 1px;
+}
+
+.logo {
+  font-size: 2.8rem;
+  letter-spacing: -1.05px;
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.header {
+  color: #ffffff;
+  padding: 1.6rem 2.4rem;
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */
