@@ -5,6 +5,7 @@ body {
 
 body {
   background-color: #070724;
+  position: relative;
 }
 
 *,
@@ -80,38 +81,57 @@ body {
   height: 0;
 }
 
+.mobile-menu {
+  background-color: #070724;
+  height: 100%;
+  padding: 4.4rem 2.4rem;
+}
+.mobile-menu__item {
+  height: 6.5rem;
+}
+.mobile-menu__item:not(:last-child) {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+}
 .mobile-menu__item a {
   color: #ffffff;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
-.mobile-menu .dot {
+
+.dot {
   display: inline-block;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
 }
-.mobile-menu .dot--mercury {
+.dot--mercury {
   background-color: #def4fc;
 }
-.mobile-menu .dot--venus {
+.dot--venus {
   background-color: #f7cc7f;
 }
-.mobile-menu .dot--earth {
+.dot--earth {
   background-color: #545bfe;
 }
-.mobile-menu .dot--mars {
+.dot--mars {
   background-color: #ff6a45;
 }
-.mobile-menu .dot--jupiter {
+.dot--jupiter {
   background-color: #ecad7a;
 }
-.mobile-menu .dot--saturn {
+.dot--saturn {
   background-color: #fccb6b;
 }
-.mobile-menu .dot--uranus {
+.dot--uranus {
   background-color: #65f0d5;
 }
-.mobile-menu .dot--neptune {
+.dot--neptune {
   background-color: #497efa;
 }
 

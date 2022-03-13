@@ -1,0 +1,65 @@
+.mobile-menu {
+  background-color: $c-blue-dark;
+  height: 100%;
+  padding: 4.4rem 2.4rem;
+
+  &__item {
+    height: 6.5rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(#979797, 10%);
+    }
+
+    a {
+      color: $c-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+  }
+}
+
+// DOT STYLE
+.dot {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+
+  &--mercury {
+    background-color: $c-mercury;
+  }
+
+  &--venus {
+    background-color: $c-venus;
+  }
+
+  &--earth {
+    background-color: $c-earth;
+  }
+
+  &--mars {
+    background-color: $c-mars;
+  }
+
+  &--jupiter {
+    background-color: $c-jupiter;
+  }
+
+  &--saturn {
+    background-color: $c-saturn;
+  }
+
+  &--uranus {
+    background-color: $c-uranus;
+  }
+
+  &--neptune {
+    background-color: $c-neptune;
+  }
+}
