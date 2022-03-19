@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"l4AUa":[function(require,module,exports) {
+})({"l9bOl":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "ba60c367739bf03c";
+module.bundle.HMR_BUNDLE_ID = "0907ca6d3464ddca";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,9 +518,8 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"ebWYT":[function(require,module,exports) {
-console.log('still not working??');
+},{}],"j4kuM":[function(require,module,exports) {
 
-},{}]},["l4AUa","ebWYT"], "ebWYT", "parcelRequire16e4")
+},{}]},["l9bOl","j4kuM"], "j4kuM", "parcelRequire16e4")
 
-//# sourceMappingURL=index.739bf03c.js.map
+//# sourceMappingURL=planets-fact-site.3464ddca.js.map

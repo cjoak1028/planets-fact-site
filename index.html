@@ -21,14 +21,16 @@
     />
 
     <link rel="stylesheet" href="./src/sass/main.scss" />
-    <script type="module" src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/script.js"></script>
   </head>
   <body class="body">
     <header class="header flex flex-ai-c flex-jc-sb">
       <h2 class="logo">The Planets</h2>
-      <img src="./src/assets/icon-hamburger.svg" alt="hamburger icon" />
+      <div class="hamburger-button flex flex-ai-c">
+        <img src="./src/assets/icon-hamburger.svg" alt="hamburger icon" />
+      </div>
     </header>
-    <nav class="hamburger-menu">
+    <nav class="hamburger-menu hidden">
       <ul class="hamburger-menu__list">
         <li class="hamburger-menu__item flex flex-ai-c flex-jc-sb">
           <a href="#"><span class="dot dot--mercury"></span>Mercury</a>
@@ -64,7 +66,7 @@
         </li>
       </ul>
     </nav>
-    <main style="color: yellow">hello</main>
+    <main></main>
     <!-- Mercury -->
 
     <!-- Overview Content Start -->

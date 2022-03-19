@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"l4AUa":[function(require,module,exports) {
+})({"1B2dF":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "ba60c367739bf03c";
+module.bundle.HMR_BUNDLE_ID = "207a8fdfe82f28a0";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,9 +518,14 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"ebWYT":[function(require,module,exports) {
-console.log('still not working??');
+},{}],"dV6cC":[function(require,module,exports) {
+const hamburgerButton = document.querySelector('.hamburger-button');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+hamburgerButton.addEventListener('click', ()=>{
+    hamburgerButton.classList.toggle('clicked');
+    hamburgerMenu.classList.toggle('hidden');
+});
 
-},{}]},["l4AUa","ebWYT"], "ebWYT", "parcelRequire16e4")
+},{}]},["1B2dF","dV6cC"], "dV6cC", "parcelRequire16e4")
 
-//# sourceMappingURL=index.739bf03c.js.map
+//# sourceMappingURL=index.e82f28a0.js.map

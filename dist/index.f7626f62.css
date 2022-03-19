@@ -78,7 +78,11 @@ body {
 }
 
 .hidden {
-  height: 0;
+  display: none;
+}
+
+.clicked img {
+  opacity: 25%;
 }
 
 .flex {
