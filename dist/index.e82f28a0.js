@@ -522,6 +522,8 @@ function hmrAcceptRun(bundle, id) {
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 hamburgerButton.addEventListener('click', ()=>{
+    hamburgerButton.classList.add('disabled');
+    hamburgerButton.classList.toggle('clicked');
     hamburgerMenu.classList.toggle('show');
     // Show menu
     if (hamburgerMenu.classList.contains('show')) {
@@ -532,10 +534,9 @@ hamburgerButton.addEventListener('click', ()=>{
         }, 1);
         setTimeout(()=>{
             hamburgerMenu.classList = 'hamburger-menu collapse show';
-        // hamburgerButton.disabled = false;
+            hamburgerButton.classList.remove('disabled');
         }, 500);
     } else {
-        hamburgerButton.disabled = true;
         hamburgerMenu.classList = 'hamburger-menu collapsing';
         setTimeout(()=>{
             hamburgerMenu.style.height = '0';
@@ -545,7 +546,7 @@ hamburgerButton.addEventListener('click', ()=>{
             hamburgerMenu.classList = 'hamburger-menu collapse';
             hamburgerMenu.style.height = '';
             hamburgerMenu.style.opacity = '';
-        // hamburgerButton.disabled = false;
+            hamburgerButton.classList.remove('disabled');
         }, 500);
     }
 });

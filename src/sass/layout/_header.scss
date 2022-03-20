@@ -19,6 +19,7 @@
 
   &__item {
     height: 6.5rem;
+    cursor: pointer;
 
     &:not(:last-child) {
       border-bottom: 1px solid rgba(#979797, 10%);
@@ -78,21 +79,19 @@
   }
 }
 
-// .show-menu {
-//   animation: 1s ease showMenu;
-// }
+.hamburger-button {
+  cursor: pointer;
 
-// .hide-menu {
-//   animation: 1s ease hideMenu;
-// }
+  &.disabled {
+    pointer-events: none;
+  }
 
-// .hidden {
-//   display: none;
-// }
-
-// .show {
-//   display: block;
-// }
+  &.clicked {
+    img {
+      opacity: 25%;
+    }
+  }
+}
 
 .collapse {
   &:not(.show) {
@@ -100,7 +99,7 @@
   }
 }
 
-.hamburger-menu.collapsing {
+.collapsing {
   opacity: 0;
   height: 0;
   overflow: hidden;

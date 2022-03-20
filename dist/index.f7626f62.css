@@ -105,6 +105,7 @@ body {
 }
 .hamburger-menu__item {
   height: 6.5rem;
+  cursor: pointer;
 }
 .hamburger-menu__item:not(:last-child) {
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
@@ -152,11 +153,21 @@ body {
   background-color: #497efa;
 }
 
+.hamburger-button {
+  cursor: pointer;
+}
+.hamburger-button.disabled {
+  pointer-events: none;
+}
+.hamburger-button.clicked img {
+  opacity: 25%;
+}
+
 .collapse:not(.show) {
   display: none;
 }
 
-.hamburger-menu.collapsing {
+.collapsing {
   opacity: 0;
   height: 0;
   overflow: hidden;
