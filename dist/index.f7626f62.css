@@ -77,14 +77,6 @@ body {
   text-transform: uppercase;
 }
 
-.hidden {
-  display: none;
-}
-
-.clicked img {
-  opacity: 25%;
-}
-
 .flex {
   display: flex;
 }
@@ -104,12 +96,12 @@ body {
 .hamburger-menu {
   background-color: #070724;
   width: 100%;
-  height: calc(100% - 6.4rem);
   padding: 2.4rem 2.4rem;
   position: fixed;
   left: 0;
   z-index: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
+  transition: height 0.5s ease, opacity 0.8s ease;
 }
 .hamburger-menu__item {
   height: 6.5rem;
@@ -158,5 +150,15 @@ body {
 }
 .dot--neptune {
   background-color: #497efa;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.hamburger-menu.collapsing {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */

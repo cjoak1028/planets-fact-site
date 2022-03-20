@@ -7,13 +7,15 @@
 .hamburger-menu {
   background-color: $c-blue-dark;
   width: 100%;
-  height: calc(100% - 6.4rem);
+  // height: calc(100% - 6.4rem);
   padding: 2.4rem 2.4rem;
 
   position: fixed;
   left: 0;
   z-index: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  transition: height 0.5s ease, opacity 0.8s ease;
 
   &__item {
     height: 6.5rem;
@@ -74,4 +76,32 @@
   &--neptune {
     background-color: $c-neptune;
   }
+}
+
+// .show-menu {
+//   animation: 1s ease showMenu;
+// }
+
+// .hide-menu {
+//   animation: 1s ease hideMenu;
+// }
+
+// .hidden {
+//   display: none;
+// }
+
+// .show {
+//   display: block;
+// }
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.hamburger-menu.collapsing {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
