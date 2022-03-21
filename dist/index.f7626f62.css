@@ -96,7 +96,9 @@ body {
 .hamburger-menu {
   background-color: #070724;
   width: 100%;
-  padding: 2.4rem 2.4rem;
+  margin-top: 2.4rem;
+  padding: 0 2.4rem;
+  padding-bottom: 4.8rem;
   position: fixed;
   left: 0;
   z-index: 1;
@@ -119,7 +121,6 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
 }
 
 .dot {
@@ -127,6 +128,7 @@ body {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  margin-right: 2.5rem;
 }
 .dot--mercury {
   background-color: #def4fc;

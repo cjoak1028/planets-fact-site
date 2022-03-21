@@ -529,7 +529,7 @@ hamburgerButton.addEventListener('click', ()=>{
     if (hamburgerMenu.classList.contains('show')) {
         hamburgerMenu.classList = 'hamburger-menu collapsing';
         setTimeout(()=>{
-            hamburgerMenu.style.height = 'calc(100% - 6.4rem)';
+            hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
             hamburgerMenu.style.opacity = '100%';
         }, 1);
         setTimeout(()=>{
