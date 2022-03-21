@@ -103,7 +103,7 @@ body {
   left: 0;
   z-index: 1;
   overflow-y: auto;
-  transition: height 0.5s ease, opacity 0.8s ease;
+  transition: height 0.4s ease-out, opacity 0.4s linear;
 }
 .hamburger-menu__item {
   height: 6.5rem;
@@ -167,7 +167,7 @@ body {
   position: relative;
   width: 2.4rem;
   height: 2.4rem;
-  transition: opacity 0.1s ease-in;
+  transition: opacity 0.25s linear;
 }
 .hamburger-button span {
   position: absolute;
