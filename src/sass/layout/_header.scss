@@ -9,7 +9,7 @@
   width: 100%;
   margin-top: 2.4rem;
   padding: 0 2.4rem;
-  padding-bottom: 4.8rem; // why?
+  padding-bottom: 4.8rem; // why? (margin-top + padding)?
 
   position: fixed;
   left: 0;
@@ -36,6 +36,18 @@
       display: flex;
       align-items: center;
     }
+  }
+
+  &.collapse {
+    &:not(.show) {
+      display: none;
+    }
+  }
+
+  &.collapsing {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
   }
 }
 
@@ -80,28 +92,73 @@
   }
 }
 
+// .hamburger-button {
+//   cursor: pointer;
+
+//   &.disabled {
+//     pointer-events: none;
+//   }
+
+//   &.clicked {
+//     img {
+//       opacity: 25%;
+//     }
+//   }
+// }
+
 .hamburger-button {
-  cursor: pointer;
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: opacity 0.1s ease-in;
+
+  span {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: $c-white;
+    border-radius: 15%;
+
+    transition: 0.25s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 3.5px;
+    transform-origin: left bottom;
+  }
+
+  span:nth-child(2) {
+    top: calc(50% - 1.5px);
+  }
+
+  span:nth-child(3) {
+    top: calc(2.4rem - 6.5px);
+    transform-origin: left top;
+  }
+
+  &.open {
+    opacity: 25%;
+
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 2px;
+      left: 2px;
+    }
+
+    span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 19px;
+      left: 2px;
+    }
+  }
 
   &.disabled {
     pointer-events: none;
   }
-
-  &.clicked {
-    img {
-      opacity: 25%;
-    }
-  }
-}
-
-.collapse {
-  &:not(.show) {
-    display: none;
-  }
-}
-
-.collapsing {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
 }

@@ -523,7 +523,7 @@ const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 hamburgerButton.addEventListener('click', ()=>{
     hamburgerButton.classList.add('disabled');
-    hamburgerButton.classList.toggle('clicked');
+    hamburgerButton.classList.toggle('open');
     hamburgerMenu.classList.toggle('show');
     // Show menu
     if (hamburgerMenu.classList.contains('show')) {

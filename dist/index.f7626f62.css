@@ -122,6 +122,14 @@ body {
   display: flex;
   align-items: center;
 }
+.hamburger-menu.collapse:not(.show) {
+  display: none;
+}
+.hamburger-menu.collapsing {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
 
 .dot {
   display: inline-block;
@@ -156,22 +164,49 @@ body {
 }
 
 .hamburger-button {
-  cursor: pointer;
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: opacity 0.1s ease-in;
+}
+.hamburger-button span {
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15%;
+  transition: 0.25s ease-in-out;
+}
+.hamburger-button span:nth-child(1) {
+  top: 3.5px;
+  transform-origin: left bottom;
+}
+.hamburger-button span:nth-child(2) {
+  top: calc(50% - 1.5px);
+}
+.hamburger-button span:nth-child(3) {
+  top: calc(2.4rem - 6.5px);
+  transform-origin: left top;
+}
+.hamburger-button.open {
+  opacity: 25%;
+}
+.hamburger-button.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 2px;
+  left: 2px;
+}
+.hamburger-button.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.hamburger-button.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 19px;
+  left: 2px;
 }
 .hamburger-button.disabled {
   pointer-events: none;
-}
-.hamburger-button.clicked img {
-  opacity: 25%;
-}
-
-.collapse:not(.show) {
-  display: none;
-}
-
-.collapsing {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */
