@@ -142,7 +142,6 @@ body {
 .hamburger-menu {
   background-color: #070724;
   width: 100%;
-  margin-top: 2.4rem;
   padding: 0 2.4rem;
   padding-bottom: 4.8rem;
   position: fixed;
@@ -150,6 +149,9 @@ body {
   z-index: 1;
   overflow-y: auto;
   transition: height 0.4s ease-out, opacity 0.3s linear;
+}
+.hamburger-menu__list {
+  margin-top: 2.4rem;
 }
 .hamburger-menu__item {
   height: 6.5rem;
@@ -207,5 +209,47 @@ body {
 }
 .bullet--neptune {
   background-color: #497efa;
+}
+
+.sub-menu {
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+}
+
+.sub-menu__list {
+  padding: 0rem 2.4rem;
+}
+
+.sub-menu__item {
+  width: 8rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.sub-menu__item a {
+  position: relative;
+  display: block;
+  padding: 2rem 0rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 50%;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.93px;
+}
+.sub-menu__item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 0.4rem;
+  background-color: #ffffff;
+  transition: 0.16s all 0.025s;
+}
+.sub-menu__item a::after {
+  right: 100%;
+}
+.sub-menu__item a:hover::after {
+  left: 0;
+  right: 0;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */

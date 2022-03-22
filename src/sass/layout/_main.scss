@@ -1,0 +1,46 @@
+.sub-menu {
+  border-bottom: rgba($c-white, 20%) 1px solid;
+}
+
+.sub-menu__list {
+  padding: 0rem 2.4rem;
+}
+
+.sub-menu__item {
+  width: 8rem;
+  text-align: center;
+  line-height: 1rem;
+
+  a {
+    position: relative;
+    display: block;
+    padding: 2rem 0rem;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $c-white;
+    opacity: 50%;
+    font-family: $font-spartan;
+    font-weight: $font-bold;
+    font-size: 0.9rem;
+    letter-spacing: 1.93px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 0.4rem;
+      background-color: $c-white;
+      transition: 0.16s all 0.025s;
+    }
+
+    &::after {
+      right: 100%;
+    }
+
+    &:hover::after {
+      left: 0;
+      right: 0;
+    }
+  }
+}
