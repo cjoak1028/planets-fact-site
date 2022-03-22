@@ -2,6 +2,63 @@
   color: $c-white;
   padding: 1.6rem 2.4rem;
   border-bottom: rgba($c-white, 20%) 1px solid;
+
+  .hamburger-button {
+    position: relative;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: opacity 0.2s linear;
+
+    span {
+      position: absolute;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: $c-white;
+      border-radius: 15%;
+
+      transition: 0.25s ease-in-out;
+    }
+
+    span:nth-child(1) {
+      top: 3.5px;
+      transform-origin: left bottom;
+    }
+
+    span:nth-child(2) {
+      top: calc(50% - 1.5px);
+    }
+
+    span:nth-child(3) {
+      top: calc(2.4rem - 6.5px);
+      transform-origin: left top;
+    }
+
+    &.open {
+      opacity: 25%;
+
+      span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 2px;
+        left: 2px;
+      }
+
+      span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 19px;
+        left: 2px;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+    }
+  }
 }
 
 .hamburger-menu {
@@ -16,7 +73,7 @@
   z-index: 1;
   overflow-y: auto;
 
-  transition: height 0.4s ease-out, opacity 0.4s linear;
+  transition: height 0.4s ease-out, opacity 0.3s linear;
 
   &__item {
     height: 6.5rem;
@@ -51,8 +108,8 @@
   }
 }
 
-// DOT STYLE
-.dot {
+// BULLET STYLE
+.bullet {
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -89,76 +146,5 @@
 
   &--neptune {
     background-color: $c-neptune;
-  }
-}
-
-// .hamburger-button {
-//   cursor: pointer;
-
-//   &.disabled {
-//     pointer-events: none;
-//   }
-
-//   &.clicked {
-//     img {
-//       opacity: 25%;
-//     }
-//   }
-// }
-
-.hamburger-button {
-  position: relative;
-  width: 2.4rem;
-  height: 2.4rem;
-  transition: opacity 0.25s linear;
-
-  span {
-    position: absolute;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: $c-white;
-    border-radius: 15%;
-
-    transition: 0.25s ease-in-out;
-  }
-
-  span:nth-child(1) {
-    top: 3.5px;
-    transform-origin: left bottom;
-  }
-
-  span:nth-child(2) {
-    top: calc(50% - 1.5px);
-  }
-
-  span:nth-child(3) {
-    top: calc(2.4rem - 6.5px);
-    transform-origin: left top;
-  }
-
-  &.open {
-    opacity: 25%;
-
-    span:nth-child(1) {
-      transform: rotate(45deg);
-      top: 2px;
-      left: 2px;
-    }
-
-    span:nth-child(2) {
-      width: 0%;
-      opacity: 0;
-    }
-
-    span:nth-child(3) {
-      transform: rotate(-45deg);
-      top: 19px;
-      left: 2px;
-    }
-  }
-
-  &.disabled {
-    pointer-events: none;
   }
 }

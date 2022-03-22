@@ -92,6 +92,52 @@ body {
   padding: 1.6rem 2.4rem;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
 }
+.header .hamburger-button {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: opacity 0.2s linear;
+}
+.header .hamburger-button span {
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 15%;
+  transition: 0.25s ease-in-out;
+}
+.header .hamburger-button span:nth-child(1) {
+  top: 3.5px;
+  transform-origin: left bottom;
+}
+.header .hamburger-button span:nth-child(2) {
+  top: calc(50% - 1.5px);
+}
+.header .hamburger-button span:nth-child(3) {
+  top: calc(2.4rem - 6.5px);
+  transform-origin: left top;
+}
+.header .hamburger-button.open {
+  opacity: 25%;
+}
+.header .hamburger-button.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 2px;
+  left: 2px;
+}
+.header .hamburger-button.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.header .hamburger-button.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 19px;
+  left: 2px;
+}
+.header .hamburger-button.disabled {
+  pointer-events: none;
+}
 
 .hamburger-menu {
   background-color: #070724;
@@ -103,7 +149,7 @@ body {
   left: 0;
   z-index: 1;
   overflow-y: auto;
-  transition: height 0.4s ease-out, opacity 0.4s linear;
+  transition: height 0.4s ease-out, opacity 0.3s linear;
 }
 .hamburger-menu__item {
   height: 6.5rem;
@@ -131,82 +177,35 @@ body {
   overflow: hidden;
 }
 
-.dot {
+.bullet {
   display: inline-block;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   margin-right: 2.5rem;
 }
-.dot--mercury {
+.bullet--mercury {
   background-color: #def4fc;
 }
-.dot--venus {
+.bullet--venus {
   background-color: #f7cc7f;
 }
-.dot--earth {
+.bullet--earth {
   background-color: #545bfe;
 }
-.dot--mars {
+.bullet--mars {
   background-color: #ff6a45;
 }
-.dot--jupiter {
+.bullet--jupiter {
   background-color: #ecad7a;
 }
-.dot--saturn {
+.bullet--saturn {
   background-color: #fccb6b;
 }
-.dot--uranus {
+.bullet--uranus {
   background-color: #65f0d5;
 }
-.dot--neptune {
+.bullet--neptune {
   background-color: #497efa;
-}
-
-.hamburger-button {
-  position: relative;
-  width: 2.4rem;
-  height: 2.4rem;
-  transition: opacity 0.25s linear;
-}
-.hamburger-button span {
-  position: absolute;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 15%;
-  transition: 0.25s ease-in-out;
-}
-.hamburger-button span:nth-child(1) {
-  top: 3.5px;
-  transform-origin: left bottom;
-}
-.hamburger-button span:nth-child(2) {
-  top: calc(50% - 1.5px);
-}
-.hamburger-button span:nth-child(3) {
-  top: calc(2.4rem - 6.5px);
-  transform-origin: left top;
-}
-.hamburger-button.open {
-  opacity: 25%;
-}
-.hamburger-button.open span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 2px;
-  left: 2px;
-}
-.hamburger-button.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-.hamburger-button.open span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 19px;
-  left: 2px;
-}
-.hamburger-button.disabled {
-  pointer-events: none;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */
