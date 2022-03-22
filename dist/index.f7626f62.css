@@ -97,6 +97,7 @@ body {
   width: 2.4rem;
   height: 2.4rem;
   transition: opacity 0.2s linear;
+  cursor: pointer;
 }
 .header .hamburger-button span {
   position: absolute;
@@ -224,7 +225,7 @@ body {
   text-align: center;
   line-height: 1rem;
 }
-.sub-menu__item a {
+.sub-menu__item .sub-menu__link {
   position: relative;
   display: block;
   padding: 2rem 0rem;
@@ -236,19 +237,27 @@ body {
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 1.93px;
+  transition: opacity 0.2s ease-out;
 }
-.sub-menu__item a::after {
+.sub-menu__item .sub-menu__link.selected {
+  opacity: 100%;
+}
+.sub-menu__item .sub-menu__link.selected::after {
+  left: 0;
+  right: 0;
+}
+.sub-menu__item .sub-menu__link::after {
   content: "";
   position: absolute;
   bottom: 0;
   height: 0.4rem;
-  background-color: #ffffff;
+  background-color: #419ebb;
   transition: 0.16s all 0.025s;
 }
-.sub-menu__item a::after {
+.sub-menu__item .sub-menu__link::after {
   right: 100%;
 }
-.sub-menu__item a:hover::after {
+.sub-menu__item .sub-menu__link:hover::after {
   left: 0;
   right: 0;
 }

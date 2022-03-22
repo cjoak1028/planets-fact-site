@@ -11,7 +11,7 @@
   text-align: center;
   line-height: 1rem;
 
-  a {
+  .sub-menu__link {
     position: relative;
     display: block;
     padding: 2rem 0rem;
@@ -24,13 +24,24 @@
     font-weight: $font-bold;
     font-size: 0.9rem;
     letter-spacing: 1.93px;
+    transition: opacity 0.2s ease-out;
+
+    &.selected {
+      opacity: 100%;
+
+      &::after {
+        left: 0;
+        right: 0;
+      }
+    }
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       height: 0.4rem;
-      background-color: $c-white;
+      // Needs to change dynamically depending on planet
+      background-color: #419ebb;
       transition: 0.16s all 0.025s;
     }
 
