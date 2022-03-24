@@ -4,7 +4,9 @@ body {
 }
 
 body {
-  background-color: $c-blue-dark;
+  // background-color: $c-blue-dark;
+  background: $c-blue-dark url("../assets/background-stars.svg") no-repeat
+    center/cover;
   position: relative;
 }
 

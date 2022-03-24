@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  background-color: #070724;
+  background: #070724 url("background-stars.9096ea05.svg") no-repeat center/cover;
   position: relative;
 }
 
@@ -80,11 +80,17 @@ body {
 .flex {
   display: flex;
 }
+
 .flex-ai-c {
   align-items: center;
 }
+
 .flex-jc-sb {
   justify-content: space-between;
+}
+
+.flex-jc-c {
+  justify-content: center;
 }
 
 .header {
@@ -92,6 +98,7 @@ body {
   padding: 1.6rem 2.4rem;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
 }
+
 .header .hamburger-button {
   position: relative;
   width: 2.4rem;
@@ -99,6 +106,7 @@ body {
   transition: opacity 0.2s linear;
   cursor: pointer;
 }
+
 .header .hamburger-button span {
   position: absolute;
   left: 0;
@@ -108,34 +116,42 @@ body {
   border-radius: 15%;
   transition: 0.25s ease-in-out;
 }
+
 .header .hamburger-button span:nth-child(1) {
   top: 3.5px;
   transform-origin: left bottom;
 }
+
 .header .hamburger-button span:nth-child(2) {
   top: calc(50% - 1.5px);
 }
+
 .header .hamburger-button span:nth-child(3) {
   top: calc(2.4rem - 6.5px);
   transform-origin: left top;
 }
+
 .header .hamburger-button.open {
   opacity: 25%;
 }
+
 .header .hamburger-button.open span:nth-child(1) {
   transform: rotate(45deg);
   top: 2px;
   left: 2px;
 }
+
 .header .hamburger-button.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
+
 .header .hamburger-button.open span:nth-child(3) {
   transform: rotate(-45deg);
   top: 19px;
   left: 2px;
 }
+
 .header .hamburger-button.disabled {
   pointer-events: none;
 }
@@ -151,16 +167,20 @@ body {
   overflow-y: auto;
   transition: height 0.4s ease-out, opacity 0.3s linear;
 }
+
 .hamburger-menu__list {
   margin-top: 2.4rem;
 }
+
 .hamburger-menu__item {
   height: 6.5rem;
   cursor: pointer;
 }
+
 .hamburger-menu__item:not(:last-child) {
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 }
+
 .hamburger-menu__item a {
   color: #ffffff;
   text-decoration: none;
@@ -171,9 +191,11 @@ body {
   display: flex;
   align-items: center;
 }
+
 .hamburger-menu.collapse:not(.show) {
   display: none;
 }
+
 .hamburger-menu.collapsing {
   opacity: 0;
   height: 0;
@@ -187,27 +209,35 @@ body {
   border-radius: 50%;
   margin-right: 2.5rem;
 }
+
 .bullet--mercury {
   background-color: #def4fc;
 }
+
 .bullet--venus {
   background-color: #f7cc7f;
 }
+
 .bullet--earth {
   background-color: #545bfe;
 }
+
 .bullet--mars {
   background-color: #ff6a45;
 }
+
 .bullet--jupiter {
   background-color: #ecad7a;
 }
+
 .bullet--saturn {
   background-color: #fccb6b;
 }
+
 .bullet--uranus {
   background-color: #65f0d5;
 }
+
 .bullet--neptune {
   background-color: #497efa;
 }
@@ -225,6 +255,7 @@ body {
   text-align: center;
   line-height: 1rem;
 }
+
 .sub-menu__item .sub-menu__link {
   position: relative;
   display: block;
@@ -239,13 +270,16 @@ body {
   letter-spacing: 1.93px;
   transition: opacity 0.2s ease-out;
 }
+
 .sub-menu__item .sub-menu__link.selected {
   opacity: 100%;
 }
+
 .sub-menu__item .sub-menu__link.selected::after {
   left: 0;
   right: 0;
 }
+
 .sub-menu__item .sub-menu__link::after {
   content: "";
   position: absolute;
@@ -254,9 +288,12 @@ body {
   background-color: #419ebb;
   transition: 0.16s all 0.025s;
 }
+
 .sub-menu__item .sub-menu__link::after {
-  right: 100%;
+  left: 50%;
+  right: 50%;
 }
+
 .sub-menu__item .sub-menu__link:hover::after {
   left: 0;
   right: 0;
