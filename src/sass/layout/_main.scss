@@ -56,3 +56,40 @@
     }
   }
 }
+
+.planet {
+  padding: 0 2.4rem;
+
+  &__img-container {
+    height: 31.5rem;
+  }
+
+  &__img {
+    transform: scale(0.38);
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+
+  &__content {
+    margin-bottom: 3.2rem;
+  }
+
+  .content-source {
+    opacity: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: $c-white;
+      padding: 0 4px;
+    }
+  }
+}

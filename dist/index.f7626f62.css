@@ -4,7 +4,7 @@ body {
 }
 
 body {
-  background: #070724 url("background-stars.9096ea05.svg") no-repeat center/cover;
+  background: #070724 url("background-stars.9096ea05.svg") center;
   position: relative;
 }
 
@@ -30,10 +30,11 @@ html {
 }
 
 body {
-  font-size: 1.4em;
+  font-size: 1.1em;
   font-family: "Spartan", sans-serif;
   font-weight: 400;
-  line-height: 2.5em;
+  line-height: 2.2em;
+  color: #ffffff;
 }
 
 .heading-1,
@@ -71,12 +72,6 @@ body {
   letter-spacing: 1px;
 }
 
-.logo {
-  font-size: 2.8rem;
-  letter-spacing: -1.05px;
-  text-transform: uppercase;
-}
-
 .flex {
   display: flex;
 }
@@ -97,6 +92,12 @@ body {
   color: #ffffff;
   padding: 1.6rem 2.4rem;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+}
+
+.header .logo {
+  font-size: 2.8rem;
+  letter-spacing: -1.05px;
+  text-transform: uppercase;
 }
 
 .header .hamburger-button {
@@ -297,5 +298,42 @@ body {
 .sub-menu__item .sub-menu__link:hover::after {
   left: 0;
   right: 0;
+}
+
+.planet {
+  padding: 0 2.4rem;
+}
+
+.planet__img-container {
+  height: 31.5rem;
+}
+
+.planet__img {
+  transform: scale(0.38);
+}
+
+.planet__info {
+  text-align: center;
+}
+
+.planet__title {
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.planet__content {
+  margin-bottom: 3.2rem;
+}
+
+.planet .content-source {
+  opacity: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planet .content-source a {
+  color: #ffffff;
+  padding: 0 4px;
 }
 /*# sourceMappingURL=index.f7626f62.css.map */
