@@ -94,8 +94,6 @@
   }
 
   &__stats {
-    // display: flex;
-    // flex-direction: column;
     gap: 0.8rem;
   }
 
@@ -116,17 +114,15 @@
     // TYPOGRAPHY - MOBILE
     font-size: 2rem;
     font-family: $font-antonio;
-    font-weight: 500;
+    font-weight: $font-medium;
     letter-spacing: -0.75px;
   }
 }
 
 .content-source {
   opacity: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 2.8rem;
+  gap: 0.4rem;
 
   // TYPOGRAPHY - MOBILE
   font-size: 1.2rem;
@@ -135,7 +131,6 @@
 
   a {
     color: $c-white;
-    padding: 0 4px;
 
     font-weight: $font-bold;
   }
