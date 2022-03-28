@@ -88,10 +88,31 @@ h4 {
   flex-direction: column;
 }
 
+.nav {
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
+
+.nav__list {
+  max-width: 66.5rem;
+  margin: auto;
+}
+
 .header {
   color: #ffffff;
   padding: 1.6rem 2.4rem;
   border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+}
+
+@media only screen and (min-width: 767px) {
+  .header {
+    flex-direction: column;
+  }
 }
 
 .header .logo {
@@ -102,12 +123,25 @@ h4 {
   font-weight: 500;
 }
 
+@media only screen and (min-width: 767px) {
+  .header .logo {
+    margin: auto;
+    margin-bottom: 3.9rem;
+  }
+}
+
 .header .hamburger-button {
   position: relative;
   width: 2.4rem;
   height: 2.4rem;
   transition: opacity 0.2s linear;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 767px) {
+  .header .hamburger-button {
+    display: none;
+  }
 }
 
 .header .hamburger-button span {

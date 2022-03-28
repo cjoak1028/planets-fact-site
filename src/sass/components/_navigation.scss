@@ -1,0 +1,15 @@
+.nav {
+  width: 100%;
+
+  @include respond-below("small") {
+    display: none;
+  }
+
+  &__list {
+    max-width: 66.5rem;
+    margin: auto;
+  }
+
+  &__item {
+  }
+}

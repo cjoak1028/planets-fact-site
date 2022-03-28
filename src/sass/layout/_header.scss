@@ -3,12 +3,21 @@
   padding: 1.6rem 2.4rem;
   border-bottom: rgba($c-white, 20%) 1px solid;
 
+  @include respond-above("small") {
+    flex-direction: column;
+  }
+
   .logo {
     font-size: 2.8rem;
     letter-spacing: -1.05px;
     text-transform: uppercase;
     font-family: $font-antonio;
     font-weight: $font-medium;
+
+    @include respond-above("small") {
+      margin: auto;
+      margin-bottom: 3.9rem;
+    }
   }
 
   .hamburger-button {
@@ -17,6 +26,10 @@
     height: 2.4rem;
     transition: opacity 0.2s linear;
     cursor: pointer;
+
+    @include respond-above("small") {
+      display: none;
+    }
 
     span {
       position: absolute;
