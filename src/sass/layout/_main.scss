@@ -1,17 +1,17 @@
 .sub-menu {
   border-bottom: rgba($c-white, 20%) 1px solid;
-}
 
-.sub-menu__list {
-  padding: 0rem 2.4rem;
-}
+  &__list {
+    padding: 0rem 2.4rem;
+  }
 
-.sub-menu__item {
-  width: 8rem;
-  text-align: center;
-  line-height: 1rem;
+  &__item {
+    width: 8rem;
+    text-align: center;
+    line-height: 1rem;
+  }
 
-  .sub-menu__link {
+  &__link {
     position: relative;
     display: block;
     padding: 2rem 0rem;
@@ -20,11 +20,13 @@
     text-transform: uppercase;
     color: $c-white;
     opacity: 50%;
+    transition: opacity 0.2s ease-out;
+
+    //TYPOGRAPHY - MOBILE
     font-family: $font-spartan;
     font-weight: $font-bold;
     font-size: 0.9rem;
     letter-spacing: 1.93px;
-    transition: opacity 0.2s ease-out;
 
     &.selected {
       opacity: 100%;
@@ -58,7 +60,7 @@
 }
 
 .planet {
-  padding: 0 2.4rem;
+  padding: 0 2.4rem 4.7rem;
 
   &__img-container {
     height: 31.5rem;
@@ -75,21 +77,66 @@
   &__title {
     text-transform: uppercase;
     margin-bottom: 1.6rem;
+
+    // TYPOGRAPHY - MOBILE
+    font-size: 4rem;
+    font-weight: $font-medium;
+    line-height: 5.2rem;
   }
 
   &__content {
     margin-bottom: 3.2rem;
+
+    // TYPOGRAPHY - MOBILE
+    font-size: 1.1rem;
+    line-height: 2.2rem;
+    font-weight: $font-normal;
   }
 
-  .content-source {
-    opacity: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &__stats {
+    // display: flex;
+    // flex-direction: column;
+    gap: 0.8rem;
+  }
 
-    a {
-      color: $c-white;
-      padding: 0 4px;
-    }
+  &__stat {
+    border: 1px solid rgba($c-white, 50%);
+    padding: 1.3rem 2.4rem;
+    text-transform: uppercase;
+  }
+
+  &__stat-title {
+    opacity: 50%;
+
+    // TYPOGRAPHY - MOBILE
+    font-size: 0.8rem;
+  }
+
+  &__stat-num {
+    // TYPOGRAPHY - MOBILE
+    font-size: 2rem;
+    font-family: $font-antonio;
+    font-weight: 500;
+    letter-spacing: -0.75px;
+  }
+}
+
+.content-source {
+  opacity: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.8rem;
+
+  // TYPOGRAPHY - MOBILE
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  font-weight: $font-normal;
+
+  a {
+    color: $c-white;
+    padding: 0 4px;
+
+    font-weight: $font-bold;
   }
 }
