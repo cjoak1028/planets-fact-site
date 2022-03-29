@@ -89,7 +89,7 @@ h4 {
 }
 
 .nav {
-  width: 100%;
+  width: 67rem;
 }
 
 @media only screen and (max-width: 47.9em) {
@@ -99,8 +99,13 @@ h4 {
 }
 
 .nav__list {
-  max-width: 67rem;
   margin: auto;
+}
+
+@media only screen and (min-width: 65em) {
+  .nav__list {
+    margin: 0;
+  }
 }
 
 .nav__item {
@@ -121,7 +126,16 @@ h4 {
 @media only screen and (min-width: 47.9em) {
   .header {
     flex-direction: column;
-    padding: 3.2rem 5.2rem 2.7rem;
+    padding: 2.7rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2.2rem 3.2rem;
   }
 }
 
@@ -137,6 +151,12 @@ h4 {
   .header .logo {
     margin: auto;
     margin-bottom: 3.9rem;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .header .logo {
+    margin: 0;
   }
 }
 
@@ -475,6 +495,8 @@ h4 {
     width: 100%;
     flex-direction: row;
     gap: 1.1rem;
+    max-width: 111rem;
+    margin: auto;
   }
 }
 

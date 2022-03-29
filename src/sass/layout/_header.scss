@@ -5,7 +5,14 @@
 
   @include respond-above("small") {
     flex-direction: column;
-    padding: 3.2rem 5.2rem 2.7rem;
+    padding: 2.7rem 0rem;
+  }
+
+  @include respond-above("medium") {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2.2rem 3.2rem;
   }
 
   .logo {
@@ -18,6 +25,10 @@
     @include respond-above("small") {
       margin: auto;
       margin-bottom: 3.9rem;
+    }
+
+    @include respond-above("medium") {
+      margin: 0;
     }
   }
 
