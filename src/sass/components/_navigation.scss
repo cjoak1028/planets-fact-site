@@ -6,10 +6,18 @@
   }
 
   &__list {
-    max-width: 66.5rem;
+    max-width: 67rem;
     margin: auto;
   }
 
   &__item {
+    text-transform: uppercase;
+
+    line-height: 2.5rem;
+
+    color: rgba($c-white, 50%);
+    font-size: 1.1rem;
+    font-weight: $font-bold;
+    letter-spacing: 1px;
   }
 }

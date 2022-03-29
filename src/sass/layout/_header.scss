@@ -5,6 +5,7 @@
 
   @include respond-above("small") {
     flex-direction: column;
+    padding: 3.2rem 5.2rem 2.7rem;
   }
 
   .logo {
