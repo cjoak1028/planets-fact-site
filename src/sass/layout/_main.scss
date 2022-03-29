@@ -111,9 +111,8 @@
 }
 
 .planet {
-  // width: 100%;
-  // max-width: 50rem;
-  // margin: auto;
+  max-width: 140rem;
+  margin: auto;
   overflow: hidden;
   padding: 0 2.4rem 4.7rem;
 
@@ -121,10 +120,19 @@
     padding: 0 4rem 4.7rem;
   }
 
+  @include respond-above("medium") {
+    padding-top: 12.6rem;
+  }
+
   &__img-container {
-    // margin-bottom: 1.4rem;
     @include respond-above("small") {
       margin: 8rem 0rem;
+    }
+
+    @include respond-above("medium") {
+      display: inline-block;
+      width: 68.5%;
+      float: left;
     }
   }
 
@@ -138,6 +146,10 @@
     @include respond-above("small") {
       transform: scale(0.63);
     }
+
+    @include respond-above("medium") {
+      transform: scale(1);
+    }
   }
 
   &__container {
@@ -145,6 +157,11 @@
     align-items: center;
     gap: 7rem;
     margin-bottom: 2.7rem;
+
+    @include respond-above("medium") {
+      display: inline-block;
+      width: 31.5%;
+    }
   }
 
   &__info {
@@ -153,6 +170,10 @@
 
     @include respond-above("small") {
       text-align: left;
+    }
+
+    @include respond-above("medium") {
+      margin-bottom: 4rem;
     }
   }
 
@@ -166,9 +187,15 @@
     line-height: 5.2rem;
 
     @include respond-above("small") {
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.3rem;
 
       font-size: 4.8rem;
+      line-height: 4.8rem;
+    }
+
+    @include respond-above("medium") {
+      font-size: 8rem;
+      line-height: 8rem;
     }
   }
 
@@ -179,6 +206,12 @@
     font-size: 1.1rem;
     line-height: 2.2rem;
     font-weight: $font-normal;
+
+    @include respond-above("medium") {
+      font-size: 1.4rem;
+      line-height: 2.5rem;
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__stats {
@@ -188,8 +221,11 @@
       width: 100%;
       flex-direction: row;
       gap: 1.1rem;
-      max-width: 111rem;
       margin: auto;
+    }
+
+    @include respond-above("medium") {
+      margin-top: 8.7rem;
     }
   }
 
@@ -201,7 +237,12 @@
     @include respond-above("small") {
       flex-direction: column;
       align-items: flex-start;
+      gap: 0.4rem;
       flex: 1;
+    }
+
+    @include respond-above("medium") {
+      padding: 2rem 2.3rem 2.7rem;
     }
   }
 
@@ -210,6 +251,10 @@
 
     // TYPOGRAPHY - MOBILE
     font-size: 0.8rem;
+
+    @include respond-above("medium") {
+      font-size: 1.1rem;
+    }
   }
 
   &__stat-num {
@@ -222,6 +267,11 @@
     @include respond-above("small") {
       font-size: 2.4rem;
       letter-spacing: -0.9px;
+    }
+
+    @include respond-above("medium") {
+      font-size: 4rem;
+      letter-spacing: -1.5px;
     }
   }
 }

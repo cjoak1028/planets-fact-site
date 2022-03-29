@@ -416,6 +416,8 @@ h4 {
 }
 
 .planet {
+  max-width: 140rem;
+  margin: auto;
   overflow: hidden;
   padding: 0 2.4rem 4.7rem;
 }
@@ -426,9 +428,23 @@ h4 {
   }
 }
 
+@media only screen and (min-width: 65em) {
+  .planet {
+    padding-top: 12.6rem;
+  }
+}
+
 @media only screen and (min-width: 47.9em) {
   .planet__img-container {
     margin: 8rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img-container {
+    display: inline-block;
+    width: 68.5%;
+    float: left;
   }
 }
 
@@ -446,11 +462,24 @@ h4 {
   }
 }
 
+@media only screen and (min-width: 65em) {
+  .planet__img {
+    transform: scale(1);
+  }
+}
+
 .planet__container {
   display: flex;
   align-items: center;
   gap: 7rem;
   margin-bottom: 2.7rem;
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__container {
+    display: inline-block;
+    width: 31.5%;
+  }
 }
 
 .planet__info {
@@ -464,6 +493,12 @@ h4 {
   }
 }
 
+@media only screen and (min-width: 65em) {
+  .planet__info {
+    margin-bottom: 4rem;
+  }
+}
+
 .planet__title {
   text-transform: uppercase;
   margin-bottom: 1.6rem;
@@ -474,8 +509,16 @@ h4 {
 
 @media only screen and (min-width: 47.9em) {
   .planet__title {
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.3rem;
     font-size: 4.8rem;
+    line-height: 4.8rem;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__title {
+    font-size: 8rem;
+    line-height: 8rem;
   }
 }
 
@@ -484,6 +527,14 @@ h4 {
   font-size: 1.1rem;
   line-height: 2.2rem;
   font-weight: 400;
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__content {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    margin-bottom: 2.4rem;
+  }
 }
 
 .planet__stats {
@@ -495,8 +546,13 @@ h4 {
     width: 100%;
     flex-direction: row;
     gap: 1.1rem;
-    max-width: 111rem;
     margin: auto;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__stats {
+    margin-top: 8.7rem;
   }
 }
 
@@ -510,13 +566,26 @@ h4 {
   .planet__stat {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.4rem;
     flex: 1;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__stat {
+    padding: 2rem 2.3rem 2.7rem;
   }
 }
 
 .planet__stat-title {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__stat-title {
+    font-size: 1.1rem;
+  }
 }
 
 .planet__stat-num {
@@ -530,6 +599,13 @@ h4 {
   .planet__stat-num {
     font-size: 2.4rem;
     letter-spacing: -0.9px;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__stat-num {
+    font-size: 4rem;
+    letter-spacing: -1.5px;
   }
 }
 
