@@ -1,6 +1,6 @@
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-const subMenuLinks = document.querySelectorAll('.sub-menu__link');
+const subMenuLinks = document.querySelectorAll('.sub-menu--mobile__link');
 
 // Hamburger button event handler
 hamburgerButton.addEventListener('click', () => {

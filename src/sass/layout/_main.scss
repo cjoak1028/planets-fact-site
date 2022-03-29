@@ -91,6 +91,12 @@
       margin-bottom: 1.6rem;
     }
 
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(#d8d8d8, 20%);
+      border-color: rgba(#d8d8d8, 20%);
+    }
+
     &.selected {
       // Change color depending on planet
       background-color: $c-turquoise;
@@ -115,22 +121,33 @@
   }
 
   &__img-container {
-    height: 31.5rem;
+    // margin-bottom: 1.4rem;
+    @include respond-above("small") {
+      margin: 8rem 0rem;
+    }
   }
 
   &__img {
+    display: block;
+    transition: transform 0.8s ease;
+    transform-origin: center;
     transform: scale(0.38);
+    margin: auto;
+
+    @include respond-above("small") {
+      transform: scale(0.63);
+    }
   }
 
   &__container {
     display: flex;
     align-items: center;
     gap: 7rem;
+    margin-bottom: 2.7rem;
   }
 
   &__info {
     text-align: center;
-    margin-bottom: 2.8rem;
     flex: 1;
 
     @include respond-above("small") {
@@ -159,12 +176,24 @@
 
   &__stats {
     gap: 0.8rem;
+
+    @include respond-above("small") {
+      width: 100%;
+      flex-direction: row;
+      gap: 1.1rem;
+    }
   }
 
   &__stat {
     border: 1px solid rgba($c-white, 50%);
     padding: 1.3rem 2.4rem;
     text-transform: uppercase;
+
+    @include respond-above("small") {
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+    }
   }
 
   &__stat-title {
