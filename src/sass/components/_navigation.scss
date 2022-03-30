@@ -5,10 +5,6 @@
     display: none;
   }
 
-  //   @include respond-above("medium") {
-  //     height: 100%;
-  //   }
-
   &__list {
     margin: auto;
 
@@ -28,61 +24,90 @@
     font-size: 1.1rem;
     font-weight: $font-bold;
     letter-spacing: 1px;
+  }
+}
 
-    // @include respond-above("medium") {
-    //   height: 100%;
+.link {
+  position: relative;
 
-    //   display: flex;
-    //   align-items: center;
-    // }
+  @include respond-above("small") {
+    // REDUNDANT
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.4rem;
+      // Change color depending on planet
+      background-color: white;
+      bottom: -3.3rem;
 
-    a {
-      position: relative;
+      left: 50%;
+      right: 50%;
+      transition: 0.16s all 0.025s;
+    }
 
-      @include respond-above("medium") {
-        &::after {
-          content: "";
-          position: absolute;
-          height: 0.4rem;
-          // Change color depending on planet
-          background-color: white;
-          top: -3.8rem;
+    &:hover::after {
+      left: 0;
+      right: 0;
+    }
+  }
 
-          left: 50%;
-          right: 50%;
-          transition: 0.16s all 0.025s;
-        }
+  @include respond-above("medium") {
+    &::after {
+      top: -3.8rem;
+      bottom: auto;
+    }
+  }
 
-        &:hover::after {
-          left: 0;
-          right: 0;
-        }
-      }
+  &:hover {
+    cursor: pointer;
+    color: $c-white;
+  }
 
-      @include respond-above("small") {
-        &::after {
-          content: "";
-          position: absolute;
-          height: 0.4rem;
-          // Change color depending on planet
-          background-color: white;
-          bottom: -3.3rem;
+  &--mercury {
+    &::after {
+      background-color: $c-link-mercury;
+    }
+  }
 
-          left: 50%;
-          right: 50%;
-          transition: 0.16s all 0.025s;
-        }
+  &--venus {
+    &::after {
+      background-color: $c-link-venus;
+    }
+  }
 
-        &:hover::after {
-          left: 0;
-          right: 0;
-        }
-      }
+  &--earth {
+    &::after {
+      background-color: $c-link-earth;
+    }
+  }
 
-      &:hover {
-        cursor: pointer;
-        color: $c-white;
-      }
+  &--mars {
+    &::after {
+      background-color: $c-link-mars;
+    }
+  }
+
+  &--jupiter {
+    &::after {
+      background-color: $c-link-jupiter;
+    }
+  }
+
+  &--saturn {
+    &::after {
+      background-color: $c-link-saturn;
+    }
+  }
+
+  &--uranus {
+    &::after {
+      background-color: $c-link-uranus;
+    }
+  }
+
+  &--neptune {
+    &::after {
+      background-color: $c-link-neptune;
     }
   }
 }

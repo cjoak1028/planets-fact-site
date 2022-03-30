@@ -17,3 +17,39 @@
     flex-direction: column;
   }
 }
+
+.bg {
+  background-color: $c-white;
+
+  &--mercury {
+    background-color: $c-mercury;
+  }
+
+  &--venus {
+    background-color: $c-venus;
+  }
+
+  &--earth {
+    background-color: $c-earth;
+  }
+
+  &--mars {
+    background-color: $c-mars;
+  }
+
+  &--jupiter {
+    background-color: $c-jupiter;
+  }
+
+  &--saturn {
+    background-color: $c-saturn;
+  }
+
+  &--uranus {
+    background-color: $c-uranus;
+  }
+
+  &--neptune {
+    background-color: $c-neptune;
+  }
+}

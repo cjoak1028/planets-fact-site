@@ -88,6 +88,42 @@ h4 {
   flex-direction: column;
 }
 
+.bg {
+  background-color: #ffffff;
+}
+
+.bg--mercury {
+  background-color: #def4fc;
+}
+
+.bg--venus {
+  background-color: #f7cc7f;
+}
+
+.bg--earth {
+  background-color: #545bfe;
+}
+
+.bg--mars {
+  background-color: #ff6a45;
+}
+
+.bg--jupiter {
+  background-color: #ecad7a;
+}
+
+.bg--saturn {
+  background-color: #fccb6b;
+}
+
+.bg--uranus {
+  background-color: #65f0d5;
+}
+
+.bg--neptune {
+  background-color: #497efa;
+}
+
 .nav {
   width: 67rem;
 }
@@ -117,29 +153,12 @@ h4 {
   letter-spacing: 1px;
 }
 
-.nav__item a {
+.link {
   position: relative;
 }
 
-@media only screen and (min-width: 65em) {
-  .nav__item a::after {
-    content: "";
-    position: absolute;
-    height: 0.4rem;
-    background-color: white;
-    top: -3.8rem;
-    left: 50%;
-    right: 50%;
-    transition: 0.16s all 0.025s;
-  }
-  .nav__item a:hover::after {
-    left: 0;
-    right: 0;
-  }
-}
-
 @media only screen and (min-width: 47.9em) {
-  .nav__item a::after {
+  .link::after {
     content: "";
     position: absolute;
     height: 0.4rem;
@@ -149,15 +168,54 @@ h4 {
     right: 50%;
     transition: 0.16s all 0.025s;
   }
-  .nav__item a:hover::after {
+  .link:hover::after {
     left: 0;
     right: 0;
   }
 }
 
-.nav__item a:hover {
+@media only screen and (min-width: 65em) {
+  .link::after {
+    top: -3.8rem;
+    bottom: auto;
+  }
+}
+
+.link:hover {
   cursor: pointer;
   color: #ffffff;
+}
+
+.link--mercury::after {
+  background-color: #419ebb;
+}
+
+.link--venus::after {
+  background-color: #eda249;
+}
+
+.link--earth::after {
+  background-color: #6f2ed6;
+}
+
+.link--mars::after {
+  background-color: #d14c32;
+}
+
+.link--jupiter::after {
+  background-color: #d83a34;
+}
+
+.link--saturn::after {
+  background-color: #cd5120;
+}
+
+.link--uranus::after {
+  background-color: #1ec2a4;
+}
+
+.link--neptune::after {
+  background-color: #2d68f0;
 }
 
 .header {

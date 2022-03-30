@@ -29,3 +29,16 @@ $c-jupiter: #ecad7a;
 $c-saturn: #fccb6b;
 $c-uranus: #65f0d5;
 $c-neptune: #497efa;
+
+// LINK COLORS SPECIFIC TO PLANETS
+$c-link-mercury: $c-turquoise;
+$c-link-venus: $c-yellow-orange;
+$c-link-earth: $c-purple;
+$c-link-mars: $c-red-1;
+$c-link-jupiter: $c-red-2;
+$c-link-saturn: $c-red-3;
+$c-link-uranus: $c-green-aqua;
+$c-link-neptune: $c-blue;
+
+// PLANETS
+$planets: mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
