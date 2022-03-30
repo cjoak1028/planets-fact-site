@@ -426,7 +426,7 @@ h4 {
 }
 
 .sub-menu--tablet__item {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(216, 216, 216, 0.2);
   padding: 0.8rem 2rem;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -442,7 +442,7 @@ h4 {
 .sub-menu--tablet__item:hover {
   cursor: pointer;
   background-color: rgba(216, 216, 216, 0.2);
-  border-color: rgba(216, 216, 216, 0.2);
+  border: 1px solid transparent;
 }
 
 .sub-menu--tablet__item.selected {

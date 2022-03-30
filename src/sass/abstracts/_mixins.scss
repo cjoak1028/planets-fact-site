@@ -1,3 +1,4 @@
+// BREAKPOINT MANAGER
 $breakpoints: (
   "small": 47.9em,
   "medium": 65em,
@@ -25,3 +26,5 @@ $breakpoints: (
             + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+// COLOR MANAGER (DEPENDING ON PLANET)

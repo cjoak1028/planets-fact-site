@@ -65,7 +65,7 @@
   }
 }
 
-//SUB-MENU TABLET + ABOVE
+//SUB-MENU TABLET + DESKTOP
 .sub-menu--tablet {
   display: none;
 
@@ -75,7 +75,7 @@
   }
 
   &__item {
-    border: 1px solid rgba($c-white, 50%);
+    border: 1px solid rgba(#d8d8d8, 20%);
     padding: 0.8rem 2rem;
     text-transform: uppercase;
 
@@ -92,7 +92,7 @@
     &:hover {
       cursor: pointer;
       background-color: rgba(#d8d8d8, 20%);
-      border-color: rgba(#d8d8d8, 20%);
+      border: 1px solid transparent;
     }
 
     &.selected {
