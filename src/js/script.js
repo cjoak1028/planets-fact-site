@@ -1,6 +1,25 @@
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-const subMenuLinks = document.querySelectorAll('.sub-menu--mobile__link');
+const mobileSubMenuLinks = document.querySelectorAll('.sub-menu--mobile__link');
+const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__item');
+const navLinks = document.querySelectorAll('.nav__link');
+
+
+// Makes a group of elements selectable by giving selected class to clicked element
+const makeSelectable = (elems) => {
+    elems.forEach((elem) => {
+        elem.addEventListener('click', (event) => {
+            const selectedElem = event.target;
+            // Seems inefficient
+            elems.forEach((elem) => {
+                if (elem !== selectedElem && elem.classList.contains('selected')) {
+                    elem.classList.remove('selected');
+                }
+            });
+            selectedElem.classList.add('selected');
+        });
+    });
+}
 
 // Hamburger button event handler
 hamburgerButton.addEventListener('click', () => {
@@ -40,20 +59,14 @@ hamburgerButton.addEventListener('click', () => {
     };
 });
 
-// Sub-menu link event handler
-// Can this be refactored?
-subMenuLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-        const selectedLink = event.target;
-        // Seems inefficient
-        subMenuLinks.forEach((link) => {
-            if (link !== selectedLink && link.classList.contains('selected')) {
-                link.classList.remove('selected');
-            }
-        });
-        selectedLink.classList.add('selected');
-    });
-});
+// Makes mobile sub-menu selectable
+makeSelectable(mobileSubMenuLinks);
+
+// Makes tablet sub-menu selectable
+makeSelectable(tabletSubMenuLinks);
+
+// Makes nav-links selectable
+makeSelectable(navLinks);
 
 
 
