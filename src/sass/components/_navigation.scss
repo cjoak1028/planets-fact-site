@@ -5,11 +5,17 @@
     display: none;
   }
 
+  //   @include respond-above("medium") {
+  //     height: 100%;
+  //   }
+
   &__list {
     margin: auto;
 
     @include respond-above("medium") {
       margin: 0;
+
+      //   height: 100%;
     }
   }
 
@@ -22,5 +28,61 @@
     font-size: 1.1rem;
     font-weight: $font-bold;
     letter-spacing: 1px;
+
+    // @include respond-above("medium") {
+    //   height: 100%;
+
+    //   display: flex;
+    //   align-items: center;
+    // }
+
+    a {
+      position: relative;
+
+      @include respond-above("medium") {
+        &::after {
+          content: "";
+          position: absolute;
+          height: 0.4rem;
+          // Change color depending on planet
+          background-color: white;
+          top: -3.8rem;
+
+          left: 50%;
+          right: 50%;
+          transition: 0.16s all 0.025s;
+        }
+
+        &:hover::after {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      @include respond-above("small") {
+        &::after {
+          content: "";
+          position: absolute;
+          height: 0.4rem;
+          // Change color depending on planet
+          background-color: white;
+          bottom: -3.3rem;
+
+          left: 50%;
+          right: 50%;
+          transition: 0.16s all 0.025s;
+        }
+
+        &:hover::after {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $c-white;
+      }
+    }
   }
 }

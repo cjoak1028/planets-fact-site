@@ -52,12 +52,10 @@
       height: 0.4rem;
       // Needs to change dynamically depending on planet
       background-color: #419ebb;
-      transition: 0.16s all 0.025s;
-    }
 
-    &::after {
       left: 50%;
       right: 50%;
+      transition: 0.16s all 0.025s;
     }
 
     &:hover::after {

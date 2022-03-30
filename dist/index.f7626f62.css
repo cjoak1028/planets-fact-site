@@ -117,6 +117,49 @@ h4 {
   letter-spacing: 1px;
 }
 
+.nav__item a {
+  position: relative;
+}
+
+@media only screen and (min-width: 65em) {
+  .nav__item a::after {
+    content: "";
+    position: absolute;
+    height: 0.4rem;
+    background-color: white;
+    top: -3.8rem;
+    left: 50%;
+    right: 50%;
+    transition: 0.16s all 0.025s;
+  }
+  .nav__item a:hover::after {
+    left: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 47.9em) {
+  .nav__item a::after {
+    content: "";
+    position: absolute;
+    height: 0.4rem;
+    background-color: white;
+    bottom: -3.3rem;
+    left: 50%;
+    right: 50%;
+    transition: 0.16s all 0.025s;
+  }
+  .nav__item a:hover::after {
+    left: 0;
+    right: 0;
+  }
+}
+
+.nav__item a:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
 .header {
   color: #ffffff;
   padding: 1.6rem 2.4rem;
@@ -361,12 +404,9 @@ h4 {
   bottom: 0;
   height: 0.4rem;
   background-color: #419ebb;
-  transition: 0.16s all 0.025s;
-}
-
-.sub-menu--mobile__link::after {
   left: 50%;
   right: 50%;
+  transition: 0.16s all 0.025s;
 }
 
 .sub-menu--mobile__link:hover::after {
