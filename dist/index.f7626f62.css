@@ -164,6 +164,7 @@ h4 {
     height: 0.4rem;
     background-color: white;
     bottom: -3.4rem;
+    pointer-events: none;
     left: 50%;
     right: 50%;
     transition: 0.16s all 0.025s;
@@ -492,9 +493,15 @@ h4 {
   }
 }
 
-.sub-menu--tablet__item {
-  border: 1px solid rgba(216, 216, 216, 0.2);
+.sub-menu--tablet__item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.sub-menu--tablet__link {
+  display: block;
   padding: 0.8rem 2rem;
+  cursor: pointer;
+  border: 1px solid rgba(216, 216, 216, 0.2);
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 700;
@@ -502,19 +509,14 @@ h4 {
   letter-spacing: 0.2rem;
 }
 
-.sub-menu--tablet__item:not(:last-child) {
-  margin-bottom: 1.6rem;
-}
-
-.sub-menu--tablet__item:hover {
-  cursor: pointer;
+.sub-menu--tablet__link:hover {
   background-color: rgba(216, 216, 216, 0.2);
   border: 1px solid transparent;
 }
 
-.sub-menu--tablet__item.selected {
+.sub-menu--tablet__link.selected {
   background-color: #419ebb;
-  border-color: #419ebb;
+  border: 1px solid transparent;
 }
 
 .sub-menu--tablet .num {

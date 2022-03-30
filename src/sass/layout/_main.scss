@@ -75,8 +75,17 @@
   }
 
   &__item {
-    border: 1px solid rgba(#d8d8d8, 20%);
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__link {
+    display: block;
     padding: 0.8rem 2rem;
+    cursor: pointer;
+
+    border: 1px solid rgba(#d8d8d8, 20%);
     text-transform: uppercase;
 
     // TYPOGRAPHY - TABLET
@@ -85,20 +94,14 @@
     line-height: 2.5rem;
     letter-spacing: 0.2rem;
 
-    &:not(:last-child) {
-      margin-bottom: 1.6rem;
-    }
-
     &:hover {
-      cursor: pointer;
       background-color: rgba(#d8d8d8, 20%);
       border: 1px solid transparent;
     }
 
     &.selected {
-      // Change color depending on planet
       background-color: $c-turquoise;
-      border-color: $c-turquoise;
+      border: 1px solid transparent;
     }
   }
 

@@ -522,7 +522,7 @@ function hmrAcceptRun(bundle, id) {
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mobileSubMenuLinks = document.querySelectorAll('.sub-menu--mobile__link');
-const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__item');
+const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__link');
 const navLinks = document.querySelectorAll('.nav__link');
 // Makes a group of elements selectable by giving selected class to clicked element
 const makeSelectable = (elems)=>{
