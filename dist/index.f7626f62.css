@@ -461,6 +461,7 @@ body.hamburger-menu-open {
   color: #ffffff;
   opacity: 50%;
   transition: opacity 0.2s ease-out;
+  cursor: pointer;
   font-family: "Spartan", sans-serif;
   font-weight: 700;
   font-size: 0.9rem;

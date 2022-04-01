@@ -675,6 +675,18 @@ navLinks.forEach((link)=>{
         }
     });
 });
+// Mobile sub-menu link handler
+mobileSubMenuLinks.forEach((link)=>{
+    link.addEventListener('click', (event)=>{
+        const targetLink = event.target;
+        selectLink(mobileSubMenuLinks, targetLink);
+        // Render proper content info
+        targetLink === mobileOverviewLink && renderPlanetContent('overview', currentPlanetData);
+        targetLink === mobileStructureLink && renderPlanetContent('structure', currentPlanetData);
+        targetLink === mobileSurfaceLink && renderPlanetContent('geology', currentPlanetData);
+    });
+});
+// Tablet sub-menu link handler
 tabletSubMenuLinks.forEach((link)=>{
     link.addEventListener('click', (event)=>{
         const targetLink = event.target;
