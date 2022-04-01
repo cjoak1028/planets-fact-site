@@ -15,6 +15,7 @@ const navLinks = document.querySelectorAll('.nav__link');
 
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
+const planetContentSource = document.querySelector('.content-source__link');
 const planetRot = document.querySelector('.stat__rotation');
 const planetRev = document.querySelector('.stat__revolution');
 const planetRad = document.querySelector('.stat__radius');
@@ -45,9 +46,32 @@ const selectLink = (links, targetLink) => {
     targetLink.classList.add('selected');
 };
 
-// Renders planet data
-const renderPlanetData = planetData => {
+// Render planet title
+const renderPlanetTitle = planetData => {
     planetTitle.innerHTML = planetData.name;
+};
+
+// Render planet content
+const renderPlanetContent = (contentType, planetData) => {
+    if (contentType === 'overview') {
+        planetContent.innerHTML = planetData.overview.content;
+        planetContentSource.setAttribute("href", planetData.overview.source);
+    } else if (contentType === 'structure') {
+        planetContent.innerHTML = planetData.structure.content;
+        planetContentSource.setAttribute("href", planetData.structure.source);
+    } else if (contentType === 'geology') {
+        planetContent.innerHTML = planetData.geology.content;
+        planetContentSource.setAttribute("href", planetData.geology.source);
+    }
+}
+
+// Render planet image
+const renderPlanetImg = planetData => {
+
+}
+
+// Render planet stats
+const renderPlanetStats = planetData => {
     planetRot.innerHTML = planetData.rotation;
     planetRev.innerHTML = planetData.revolution;
     planetRad.innerHTML = planetData.radius;
@@ -113,21 +137,37 @@ navLinks.forEach((link) => {
 
         // Render planet data
         if (targetLink.classList.contains('nav__link--mercury')) {
-            renderPlanetData(mercuryData);
+            renderPlanetTitle(mercuryData);
+            renderPlanetStats(mercuryData);
+            renderPlanetContent('overview', mercuryData);
         } else if (targetLink.classList.contains('nav__link--venus')) {
-            renderPlanetData(venusData);
+            renderPlanetTitle(venusData);
+            renderPlanetStats(venusData);
+            renderPlanetContent('overview', venusData);
         } else if (targetLink.classList.contains('nav__link--earth')) {
-            renderPlanetData(earthData);
+            renderPlanetTitle(earthData);
+            renderPlanetStats(earthData);
+            renderPlanetContent('overview', earthData);
         } else if (targetLink.classList.contains('nav__link--mars')) {
-            renderPlanetData(marsData);
+            renderPlanetTitle(marsData);
+            renderPlanetStats(marsData);
+            renderPlanetContent('overview', marsData);
         } else if (targetLink.classList.contains('nav__link--jupiter')) {
-            renderPlanetData(jupiterData);
+            renderPlanetTitle(jupiterData);
+            renderPlanetStats(jupiterData);
+            renderPlanetContent('overview', jupiterData);
         } else if (targetLink.classList.contains('nav__link--saturn')) {
-            renderPlanetData(saturnData);
+            renderPlanetTitle(saturnData);
+            renderPlanetStats(saturnData);
+            renderPlanetContent('overview', saturnData);
         } else if (targetLink.classList.contains('nav__link--uranus')) {
-            renderPlanetData(uranusData);
+            renderPlanetTitle(uranusData);
+            renderPlanetStats(uranusData);
+            renderPlanetContent('overview', uranusData);
         } else {
-            renderPlanetData(neptuneData);
+            renderPlanetTitle(neptuneData);
+            renderPlanetStats(neptuneData);
+            renderPlanetContent('overview', neptuneData);
         };
     });
 });
