@@ -108,6 +108,10 @@
 
   transition: height 0.4s ease-out, opacity 0.3s linear;
 
+  @include respond-above("small") {
+    display: none;
+  }
+
   &__list {
     margin-top: 2.4rem;
   }

@@ -53,3 +53,7 @@
     background-color: $c-neptune;
   }
 }
+
+body.hamburger-menu-open {
+  overflow: hidden;
+}
