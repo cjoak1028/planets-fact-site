@@ -12,6 +12,7 @@ const tabletStructureLink = tabletSubMenuLinks[1];
 const tabletSurfaceLink = tabletSubMenuLinks[2];
 
 const navLinks = document.querySelectorAll('.nav__link');
+const mercuryLink = navLinks[0];
 
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
@@ -123,6 +124,8 @@ hamburgerButton.addEventListener('click', () => {
     };
 });
 
+let currentPlanetData;
+
 // Navigation link event handler
 navLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -140,37 +143,72 @@ navLinks.forEach((link) => {
             renderPlanetTitle(mercuryData);
             renderPlanetStats(mercuryData);
             renderPlanetContent('overview', mercuryData);
+            currentPlanetData = mercuryData;
         } else if (targetLink.classList.contains('nav__link--venus')) {
             renderPlanetTitle(venusData);
             renderPlanetStats(venusData);
             renderPlanetContent('overview', venusData);
+            currentPlanetData = venusData;
         } else if (targetLink.classList.contains('nav__link--earth')) {
             renderPlanetTitle(earthData);
             renderPlanetStats(earthData);
             renderPlanetContent('overview', earthData);
+            currentPlanetData = earthData;
         } else if (targetLink.classList.contains('nav__link--mars')) {
             renderPlanetTitle(marsData);
             renderPlanetStats(marsData);
             renderPlanetContent('overview', marsData);
+            currentPlanetData = marsData;
         } else if (targetLink.classList.contains('nav__link--jupiter')) {
             renderPlanetTitle(jupiterData);
             renderPlanetStats(jupiterData);
             renderPlanetContent('overview', jupiterData);
+            currentPlanetData = jupiterData;
         } else if (targetLink.classList.contains('nav__link--saturn')) {
             renderPlanetTitle(saturnData);
             renderPlanetStats(saturnData);
             renderPlanetContent('overview', saturnData);
+            currentPlanetData = saturnData;
         } else if (targetLink.classList.contains('nav__link--uranus')) {
             renderPlanetTitle(uranusData);
             renderPlanetStats(uranusData);
             renderPlanetContent('overview', uranusData);
+            currentPlanetData = uranusData;
         } else {
             renderPlanetTitle(neptuneData);
             renderPlanetStats(neptuneData);
             renderPlanetContent('overview', neptuneData);
+            currentPlanetData = neptuneData;
         };
     });
 });
+
+tabletSubMenuLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        const targetLink = event.target;
+
+        // Select clicked sub-menu link
+        selectLink(tabletSubMenuLinks, targetLink);
+
+        // Render proper content info
+        (targetLink === tabletOverviewLink) && renderPlanetContent('overview', currentPlanetData);
+        (targetLink === tabletStructureLink) && renderPlanetContent('structure', currentPlanetData);
+        (targetLink === tabletSurfaceLink) && renderPlanetContent('geology', currentPlanetData);
+    })
+})
+
+const init = () => {
+    // Render Mercury data by default
+    selectLink(navLinks, mercuryLink);
+    selectLink(tabletSubMenuLinks, tabletOverviewLink);
+    selectLink(mobileSubMenuLinks, mobileOverviewLink);
+    currentPlanetData = mercuryData;
+    renderPlanetTitle(mercuryData);
+    renderPlanetStats(mercuryData);
+    renderPlanetContent('overview', mercuryData);
+}
+
+init();
 
 
 
