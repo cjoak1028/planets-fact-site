@@ -527,7 +527,6 @@ const mobileOverviewLink = mobileSubMenuLinks[0];
 const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__link');
 const tabletOverviewLink = tabletSubMenuLinks[0];
 const navLinks = document.querySelectorAll('.nav__link');
-const mercuryLink = navLinks[0];
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
@@ -627,7 +626,7 @@ hamburgerButton.addEventListener('click', ()=>{
     }
 });
 hamburgerLinks.forEach((link)=>{
-    link.addEventListener('click', (event)=>{
+    link.addEventListener('click', ()=>{
         // Overview sub-menu (for all views) link is selected by default
         selectLink(mobileSubMenuLinks, mobileOverviewLink);
         selectLink(tabletSubMenuLinks, tabletOverviewLink);
@@ -696,14 +695,10 @@ tabletSubMenuLinks.forEach((link)=>{
         link.id === 'surface-link' && renderPlanetContent('geology', currentPlanetData);
     });
 });
+// Function runs when reloaded
 const init = ()=>{
     // Render Mercury data by default
-    selectLink(navLinks, mercuryLink);
-    selectLink(tabletSubMenuLinks, tabletOverviewLink);
-    selectLink(mobileSubMenuLinks, mobileOverviewLink);
-    renderPlanetTitle(mercuryData);
-    renderPlanetStats(mercuryData);
-    renderPlanetContent('overview', mercuryData);
+    renderPlanetData(mercuryData);
 };
 init();
 

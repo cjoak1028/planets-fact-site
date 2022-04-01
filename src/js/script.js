@@ -9,7 +9,6 @@ const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__link');
 const tabletOverviewLink = tabletSubMenuLinks[0];
 
 const navLinks = document.querySelectorAll('.nav__link');
-const mercuryLink = navLinks[0];
 
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
@@ -62,13 +61,13 @@ const renderPlanetContent = (contentType, planetData) => {
     } else if (contentType === 'geology') {
         planetContent.innerHTML = planetData.geology.content;
         planetContentSource.setAttribute("href", planetData.geology.source);
-    }
-}
+    };
+};
 
 // Render planet image
 const renderPlanetImg = planetData => {
 
-}
+};
 
 // Render planet stats
 const renderPlanetStats = planetData => {
@@ -76,7 +75,7 @@ const renderPlanetStats = planetData => {
     planetRev.innerHTML = planetData.revolution;
     planetRad.innerHTML = planetData.radius;
     planetTemp.innerHTML = planetData.temperature;
-}
+};
 
 // Render planet data
 const renderPlanetData = (planetData) => {
@@ -84,7 +83,7 @@ const renderPlanetData = (planetData) => {
     renderPlanetStats(planetData);
     renderPlanetContent('overview', planetData);
     currentPlanetData = planetData;
-}
+};
 
 // Hamburger button event handler
 hamburgerButton.addEventListener('click', () => {
@@ -132,7 +131,7 @@ hamburgerButton.addEventListener('click', () => {
 });
 
 hamburgerLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
+    link.addEventListener('click', () => {
         // Overview sub-menu (for all views) link is selected by default
         selectLink(mobileSubMenuLinks, mobileOverviewLink);
         selectLink(tabletSubMenuLinks, tabletOverviewLink);
@@ -233,15 +232,11 @@ tabletSubMenuLinks.forEach(link => {
     });
 });
 
+// Function runs when reloaded
 const init = () => {
     // Render Mercury data by default
-    selectLink(navLinks, mercuryLink);
-    selectLink(tabletSubMenuLinks, tabletOverviewLink);
-    selectLink(mobileSubMenuLinks, mobileOverviewLink);
-    renderPlanetTitle(mercuryData);
-    renderPlanetStats(mercuryData);
-    renderPlanetContent('overview', mercuryData);
-}
+    renderPlanetData(mercuryData);
+};
 
 init();
 

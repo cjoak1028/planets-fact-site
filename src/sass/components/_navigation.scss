@@ -10,8 +10,6 @@
 
     @include respond-above("medium") {
       margin: 0;
-
-      //   height: 100%;
     }
   }
 
@@ -35,7 +33,6 @@
       content: "";
       position: absolute;
       height: 0.4rem;
-      // Change color depending on planet
       background-color: white;
       bottom: -3.4rem;
       pointer-events: none;
