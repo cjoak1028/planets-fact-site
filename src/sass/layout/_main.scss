@@ -123,35 +123,122 @@
     padding: 0 4rem 4.7rem;
   }
 
-  @include respond-above("medium") {
-    padding-top: 12.6rem;
+  &__flex-container {
+    @include respond-above("medium") {
+      display: flex;
+      align-items: center;
+      height: 75.4rem;
+    }
   }
 
   &__img-container {
+    height: 30.4rem;
+
     @include respond-above("small") {
-      margin: 8rem 0rem;
+      height: 46rem;
     }
 
     @include respond-above("medium") {
-      display: inline-block;
       width: 68.5%;
-      float: left;
+      height: 100%;
     }
   }
 
   &__img {
-    display: block;
-    transition: transform 0.8s ease;
-    transform-origin: center;
-    transform: scale(0.38);
-    margin: auto;
+    &.mercury {
+      max-height: 36.5%;
 
-    @include respond-above("small") {
-      transform: scale(0.63);
+      @include respond-above("small") {
+        max-height: 40%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 38.5%;
+      }
     }
 
-    @include respond-above("medium") {
-      transform: scale(1);
+    &.venus {
+      max-height: 50.7%;
+
+      @include respond-above("small") {
+        max-height: 55%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 53%;
+      }
+    }
+
+    &.earth {
+      max-height: 56.9%;
+
+      @include respond-above("small") {
+        max-height: 62%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 59.7%;
+      }
+    }
+
+    &.mars {
+      max-height: 42.4%;
+
+      @include respond-above("small") {
+        max-height: 46.3%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 44.6%;
+      }
+    }
+
+    &.jupiter {
+      max-height: 73.7%;
+
+      @include respond-above("small") {
+        max-height: 80.2%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 77.2%;
+      }
+    }
+
+    &.saturn {
+      max-height: 84.2%;
+
+      @include respond-above("small") {
+        max-height: 91.7%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 88.3%;
+      }
+    }
+
+    &.uranus {
+      max-height: 57.9%;
+
+      @include respond-above("small") {
+        max-height: 63%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 60.7%;
+      }
+    }
+
+    &.neptune {
+      max-height: 56.9%;
+
+      @include respond-above("small") {
+        max-height: 62%;
+      }
+
+      @include respond-above("medium") {
+        max-height: 59.7%;
+      }
     }
   }
 
@@ -227,9 +314,9 @@
       margin: auto;
     }
 
-    @include respond-above("medium") {
-      margin-top: 8.7rem;
-    }
+    // @include respond-above("medium") {
+    //   margin-top: 8.7rem;
+    // }
   }
 
   &__stat {

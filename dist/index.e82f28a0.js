@@ -527,6 +527,7 @@ const mobileOverviewLink = mobileSubMenuLinks[0];
 const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__link');
 const tabletOverviewLink = tabletSubMenuLinks[0];
 const navLinks = document.querySelectorAll('.nav__link');
+const planetImg = document.getElementById('planet__img');
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
@@ -575,21 +576,28 @@ const renderPlanetContent = (contentType, planetData2)=>{
     }
 };
 // Render planet image
-const renderPlanetImg = (planetData)=>{
+const renderPlanetImg = (planetData3)=>{
+    const imgSrc = './src' + planetData3.images.planet.substring(1);
+    const imgAlt = planetData3.name.toLowerCase();
+    console.log(imgSrc);
+    // planetImg.setAttribute('src', imgSrc);
+    // planetImg.setAttribute('alt', imgAlt);
+    console.log(planetImg);
 };
 // Render planet stats
-const renderPlanetStats = (planetData3)=>{
-    planetRot.innerHTML = planetData3.rotation;
-    planetRev.innerHTML = planetData3.revolution;
-    planetRad.innerHTML = planetData3.radius;
-    planetTemp.innerHTML = planetData3.temperature;
+const renderPlanetStats = (planetData4)=>{
+    planetRot.innerHTML = planetData4.rotation;
+    planetRev.innerHTML = planetData4.revolution;
+    planetRad.innerHTML = planetData4.radius;
+    planetTemp.innerHTML = planetData4.temperature;
 };
 // Render planet data
-const renderPlanetData = (planetData4)=>{
-    renderPlanetTitle(planetData4);
-    renderPlanetStats(planetData4);
-    renderPlanetContent('overview', planetData4);
-    currentPlanetData = planetData4;
+const renderPlanetData = (planetData5)=>{
+    renderPlanetTitle(planetData5);
+    renderPlanetStats(planetData5);
+    renderPlanetContent('overview', planetData5);
+    renderPlanetImg(planetData5);
+    currentPlanetData = planetData5;
 };
 // Hamburger button event handler
 hamburgerButton.addEventListener('click', ()=>{

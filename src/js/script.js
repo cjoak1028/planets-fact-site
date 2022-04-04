@@ -10,6 +10,8 @@ const tabletOverviewLink = tabletSubMenuLinks[0];
 
 const navLinks = document.querySelectorAll('.nav__link');
 
+const planetImg = document.getElementById('planet__img');
+
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
@@ -40,7 +42,7 @@ const isSelected = (elem) => {
 // and removing selected class from any other links
 const selectLink = (links, targetLink) => {
     links.forEach(link => {
-        link !== targetLink && isSelected(link) && link.classList.remove('selected');
+        (link !== targetLink && isSelected(link)) && link.classList.remove('selected');
     });
     targetLink.classList.add('selected');
 };
@@ -66,7 +68,12 @@ const renderPlanetContent = (contentType, planetData) => {
 
 // Render planet image
 const renderPlanetImg = planetData => {
-
+    const imgSrc = './src' + planetData.images.planet.substring(1);
+    const imgAlt = planetData.name.toLowerCase();
+    console.log(imgSrc);
+    // planetImg.setAttribute('src', imgSrc);
+    // planetImg.setAttribute('alt', imgAlt);
+    console.log(planetImg);
 };
 
 // Render planet stats
@@ -82,6 +89,7 @@ const renderPlanetData = (planetData) => {
     renderPlanetTitle(planetData);
     renderPlanetStats(planetData);
     renderPlanetContent('overview', planetData);
+    renderPlanetImg(planetData);
     currentPlanetData = planetData;
 };
 

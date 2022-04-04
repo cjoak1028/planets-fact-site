@@ -553,42 +553,155 @@ body.hamburger-menu-open {
 }
 
 @media only screen and (min-width: 65em) {
-  .planet {
-    padding-top: 12.6rem;
+  .planet__flex-container {
+    display: flex;
+    align-items: center;
+    height: 75.4rem;
   }
+}
+
+.planet__img-container {
+  height: 30.4rem;
 }
 
 @media only screen and (min-width: 47.9em) {
   .planet__img-container {
-    margin: 8rem 0rem;
+    height: 46rem;
   }
 }
 
 @media only screen and (min-width: 65em) {
   .planet__img-container {
-    display: inline-block;
     width: 68.5%;
-    float: left;
+    height: 100%;
   }
 }
 
-.planet__img {
-  display: block;
-  transition: transform 0.8s ease;
-  transform-origin: center;
-  transform: scale(0.38);
-  margin: auto;
+.planet__img.mercury {
+  max-height: 36.5%;
 }
 
 @media only screen and (min-width: 47.9em) {
-  .planet__img {
-    transform: scale(0.63);
+  .planet__img.mercury {
+    max-height: 40%;
   }
 }
 
 @media only screen and (min-width: 65em) {
-  .planet__img {
-    transform: scale(1);
+  .planet__img.mercury {
+    max-height: 38.5%;
+  }
+}
+
+.planet__img.venus {
+  max-height: 50.7%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.venus {
+    max-height: 55%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.venus {
+    max-height: 53%;
+  }
+}
+
+.planet__img.earth {
+  max-height: 56.9%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.earth {
+    max-height: 62%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.earth {
+    max-height: 59.7%;
+  }
+}
+
+.planet__img.mars {
+  max-height: 42.4%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.mars {
+    max-height: 46.3%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.mars {
+    max-height: 44.6%;
+  }
+}
+
+.planet__img.jupiter {
+  max-height: 73.7%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.jupiter {
+    max-height: 80.2%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.jupiter {
+    max-height: 77.2%;
+  }
+}
+
+.planet__img.saturn {
+  max-height: 84.2%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.saturn {
+    max-height: 91.7%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.saturn {
+    max-height: 88.3%;
+  }
+}
+
+.planet__img.uranus {
+  max-height: 57.9%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.uranus {
+    max-height: 63%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.uranus {
+    max-height: 60.7%;
+  }
+}
+
+.planet__img.neptune {
+  max-height: 56.9%;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__img.neptune {
+    max-height: 62%;
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .planet__img.neptune {
+    max-height: 59.7%;
   }
 }
 
@@ -671,12 +784,6 @@ body.hamburger-menu-open {
     flex-direction: row;
     gap: 1.1rem;
     margin: auto;
-  }
-}
-
-@media only screen and (min-width: 65em) {
-  .planet__stats {
-    margin-top: 8.7rem;
   }
 }
 

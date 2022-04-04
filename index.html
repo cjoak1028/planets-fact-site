@@ -70,7 +70,7 @@
       </nav>
       <!------------------------->
     </header>
-    <!-- MOBILE ONLY-->
+    <!-- MOBILE HAMBURGER MENU-->
     <nav class="hamburger-menu collapse">
       <ul class="hamburger-menu__list">
         <li class="hamburger-menu__item">
@@ -189,52 +189,55 @@
         </ul>
       </nav>
       <div class="planet">
-        <div class="planet__img-container">
-          <img
-            class="planet__img"
-            src="./src/assets/planet-mercury.svg"
-            alt="mercury"
-          />
-        </div>
-        <div class="planet__container">
-          <div class="planet__info">
-            <h1 class="planet__title">Mercury</h1>
-            <p class="planet__content">
-              Mercury is the smallest planet in the Solar System and the closest
-              to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
-              shortest of all the Sun's planets. Mercury is one of four
-              terrestrial planets in the Solar System, and is a rocky body like
-              Earth.
-            </p>
-            <div class="content-source flex flex-ai-c flex-jc-c">
-              <span>Source :</span>
-              <a
-                class="content-source__link"
-                href="https://en.wikipedia.org/wiki/Mercury_(planet)"
-                >Wikipedia</a
-              >
-              <img src="./src/assets/icon-source.svg" alt="source icon" />
-            </div>
+        <div class="planet__flex-container">
+          <div class="planet__img-container flex flex-ai-c flex-jc-c">
+            <img
+              id="planet__img"
+              class="planet__img mercury"
+              src="./src/assets/planet-mercury.svg"
+              alt="mercury"
+            />
           </div>
-          <nav class="sub-menu--tablet">
-            <ul class="sub-menu--tablet__list">
-              <li class="sub-menu--tablet__item">
-                <a id="overview-link" class="sub-menu--tablet__link selected"
-                  ><span class="num">01</span>Overview</a
+          <div class="planet__container">
+            <div class="planet__info">
+              <h1 class="planet__title">Mercury</h1>
+              <p class="planet__content">
+                Mercury is the smallest planet in the Solar System and the
+                closest to the Sun. Its orbit around the Sun takes 87.97 Earth
+                days, the shortest of all the Sun's planets. Mercury is one of
+                four terrestrial planets in the Solar System, and is a rocky
+                body like Earth.
+              </p>
+              <div class="content-source flex flex-ai-c flex-jc-c">
+                <span>Source :</span>
+                <a
+                  class="content-source__link"
+                  href="https://en.wikipedia.org/wiki/Mercury_(planet)"
+                  >Wikipedia</a
                 >
-              </li>
-              <li class="sub-menu--tablet__item">
-                <a id="structure-link" class="sub-menu--tablet__link"
-                  ><span class="num">02</span>Structure</a
-                >
-              </li>
-              <li class="sub-menu--tablet__item">
-                <a id="surface-link" class="sub-menu--tablet__link"
-                  ><span class="num">03</span>Surface</a
-                >
-              </li>
-            </ul>
-          </nav>
+                <img src="./src/assets/icon-source.svg" alt="source icon" />
+              </div>
+            </div>
+            <nav class="sub-menu--tablet">
+              <ul class="sub-menu--tablet__list">
+                <li class="sub-menu--tablet__item">
+                  <a id="overview-link" class="sub-menu--tablet__link selected"
+                    ><span class="num">01</span>Overview</a
+                  >
+                </li>
+                <li class="sub-menu--tablet__item">
+                  <a id="structure-link" class="sub-menu--tablet__link"
+                    ><span class="num">02</span>Structure</a
+                  >
+                </li>
+                <li class="sub-menu--tablet__item">
+                  <a id="surface-link" class="sub-menu--tablet__link"
+                    ><span class="num">03</span>Surface</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
         <div class="planet__stats flex flex-d-c">
           <div
