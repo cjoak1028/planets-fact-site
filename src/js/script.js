@@ -30,6 +30,43 @@ const saturnData = planetData[5];
 const uranusData = planetData[6];
 const neptuneData = planetData[7];
 
+// const planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
+
+// require does not run on the browser so it is compiled and thus cannot take a runtime variable
+const mercuryPlanetImg = require('../assets/planet-mercury.svg');
+const mercuryInternalImg = require('../assets/planet-mercury-internal.svg');
+const mercuryGeologyImg = require('../assets/geology-mercury.png');
+
+const venusPlanetImg = require('../assets/planet-venus.svg');
+const venusInternalImg = require('../assets/planet-venus-internal.svg');
+const venusGeologyImg = require('../assets/geology-venus.png');
+
+const earthPlanetImg = require('../assets/planet-earth.svg');
+const earthInternalImg = require('../assets/planet-earth-internal.svg');
+const earthGeologyImg = require('../assets/geology-earth.png');
+
+const marsPlanetImg = require('../assets/planet-mars.svg');
+const marsInternalImg = require('../assets/planet-mars-internal.svg');
+const marsGeologyImg = require('../assets/geology-mars.png');
+
+const jupiterPlanetImg = require('../assets/planet-jupiter.svg');
+const jupiterInternalImg = require('../assets/planet-jupiter-internal.svg');
+const jupiterGeologyImg = require('../assets/geology-jupiter.png');
+
+const saturnPlanetImg = require('../assets/planet-saturn.svg');
+const saturnInternalImg = require('../assets/planet-saturn-internal.svg');
+const saturnGeologyImg = require('../assets/geology-saturn.png');
+
+const uranusPlanetImg = require('../assets/planet-uranus.svg');
+const uranusInternalImg = require('../assets/planet-uranus-internal.svg');
+const uranusGeologyImg = require('../assets/geology-uranus.png');
+
+const neptunePlanetImg = require('../assets/planet-neptune.svg');
+const neptuneInternalImg = require('../assets/planet-neptune-internal.svg');
+const neptuneGeologyImg = require('../assets/geology-neptune.png');
+
+// console.log(mercuryImg);
+
 let currentPlanetData = mercuryData;
 
 // HELPER FUNCTIONS
@@ -60,6 +97,7 @@ const renderPlanetContent = (contentType, planetData) => {
     } else if (contentType === 'structure') {
         planetContent.innerHTML = planetData.structure.content;
         planetContentSource.setAttribute("href", planetData.structure.source);
+        renderPlanetInternalImg(planetData);
     } else if (contentType === 'geology') {
         planetContent.innerHTML = planetData.geology.content;
         planetContentSource.setAttribute("href", planetData.geology.source);
@@ -67,13 +105,79 @@ const renderPlanetContent = (contentType, planetData) => {
 };
 
 // Render planet image
-const renderPlanetImg = planetData => {
-    const imgSrc = './src' + planetData.images.planet.substring(1);
-    const imgAlt = planetData.name.toLowerCase();
-    console.log(imgSrc);
-    // planetImg.setAttribute('src', imgSrc);
-    // planetImg.setAttribute('alt', imgAlt);
-    console.log(planetImg);
+const renderPlanetImg = (planetData) => {
+    let imgSrc;
+    const planetName = planetData.name.toLowerCase();
+
+    switch (planetName) {
+        case 'mercury':
+            imgSrc = mercuryPlanetImg;
+            break;
+        case 'venus':
+            imgSrc = venusPlanetImg;
+            break;
+        case 'earth':
+            imgSrc = earthPlanetImg;
+            break
+        case 'mars':
+            imgSrc = marsPlanetImg;
+            break
+        case 'jupiter':
+            imgSrc = jupiterPlanetImg;
+            break
+        case 'saturn':
+            imgSrc = saturnPlanetImg;
+            break
+        case 'uranus':
+            imgSrc = uranusPlanetImg;
+            break
+        case 'neptune':
+            imgSrc = neptunePlanetImg;
+    }
+
+    // Set new attribute properties to planet image
+    planetImg.src = imgSrc;
+    planetImg.alt = planetName;
+    // Add planet class for resizing
+    planetImg.classList = `planet__img ${planetName}`;
+};
+
+// Render planet image
+const renderPlanetInternalImg = (planetData) => {
+    let imgSrc;
+    const planetName = planetData.name.toLowerCase();
+
+    switch (planetName) {
+        case 'mercury':
+            imgSrc = mercuryInternalImg;
+            break;
+        case 'venus':
+            imgSrc = venusInternalImg;
+            break;
+        case 'earth':
+            imgSrc = earthInternalImg;
+            break
+        case 'mars':
+            imgSrc = marsInternalImg;
+            break
+        case 'jupiter':
+            imgSrc = jupiterInternalImg;
+            break
+        case 'saturn':
+            imgSrc = saturnInternalImg;
+            break
+        case 'uranus':
+            imgSrc = uranusInternalImg;
+            break
+        case 'neptune':
+            imgSrc = neptuneInternalImg;
+    }
+
+    // Set new attribute properties to planet image
+    planetImg.src = imgSrc;
+    planetImg.alt = planetName + ' internal';
+    // Add planet class for resizing
+    planetImg.classList = `planet__img ${planetName}`;
 };
 
 // Render planet stats
