@@ -11,6 +11,7 @@ const tabletOverviewLink = tabletSubMenuLinks[0];
 const navLinks = document.querySelectorAll('.nav__link');
 
 const planetImg = document.getElementById('planet__img');
+const planetGeoImg = document.getElementById('planet__geo-img');
 
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
@@ -94,6 +95,7 @@ const renderPlanetContent = (contentType, planetData) => {
     if (contentType === 'overview') {
         planetContent.innerHTML = planetData.overview.content;
         planetContentSource.setAttribute("href", planetData.overview.source);
+        renderPlanetImg(planetData);
     } else if (contentType === 'structure') {
         planetContent.innerHTML = planetData.structure.content;
         planetContentSource.setAttribute("href", planetData.structure.source);
@@ -101,6 +103,8 @@ const renderPlanetContent = (contentType, planetData) => {
     } else if (contentType === 'geology') {
         planetContent.innerHTML = planetData.geology.content;
         planetContentSource.setAttribute("href", planetData.geology.source);
+        renderPlanetImg(planetData);
+        renderPlanetGeologyImg(planetData);
     };
 };
 
@@ -140,9 +144,11 @@ const renderPlanetImg = (planetData) => {
     planetImg.alt = planetName;
     // Add planet class for resizing
     planetImg.classList = `planet__img ${planetName}`;
+    // Add hide class to geo image just in case it's shown
+    planetGeoImg.classList = 'planet__geo-img hide';
 };
 
-// Render planet image
+// Render planet internal image
 const renderPlanetInternalImg = (planetData) => {
     let imgSrc;
     const planetName = planetData.name.toLowerCase();
@@ -178,7 +184,47 @@ const renderPlanetInternalImg = (planetData) => {
     planetImg.alt = planetName + ' internal';
     // Add planet class for resizing
     planetImg.classList = `planet__img ${planetName}`;
+    // Add hide class to geo image just in case it's shown
+    planetGeoImg.classList = 'planet__geo-img hide';
 };
+
+// Render planet geology image
+const renderPlanetGeologyImg = (planetData) => {
+    let imgSrc;
+    const planetName = planetData.name.toLowerCase();
+
+    switch (planetName) {
+        case 'mercury':
+            imgSrc = mercuryGeologyImg;
+            break;
+        case 'venus':
+            imgSrc = venusGeologyImg;
+            break;
+        case 'earth':
+            imgSrc = earthGeologyImg;
+            break
+        case 'mars':
+            imgSrc = marsGeologyImg;
+            break
+        case 'jupiter':
+            imgSrc = jupiterGeologyImg;
+            break
+        case 'saturn':
+            imgSrc = saturnGeologyImg;
+            break
+        case 'uranus':
+            imgSrc = uranusGeologyImg;
+            break
+        case 'neptune':
+            imgSrc = neptuneGeologyImg;
+    }
+
+    // Set new attribute properties to planet image
+    planetGeoImg.src = imgSrc;
+    planetGeoImg.alt = planetName + ' geology';
+    // Remove hide class to show image
+    planetGeoImg.classList.remove('hide');
+}
 
 // Render planet stats
 const renderPlanetStats = planetData => {

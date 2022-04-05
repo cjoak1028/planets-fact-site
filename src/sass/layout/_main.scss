@@ -132,6 +132,8 @@
   }
 
   &__img-container {
+    position: relative;
+
     height: 30.4rem;
 
     @include respond-above("small") {
@@ -240,6 +242,13 @@
         max-height: 59.7%;
       }
     }
+  }
+
+  &__geo-img {
+    position: absolute;
+    width: auto;
+    height: 26.5%;
+    top: 60.5%;
   }
 
   &__container {
