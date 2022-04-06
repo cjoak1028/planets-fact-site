@@ -856,6 +856,16 @@ tabletSubMenuLinks.forEach((link)=>{
         }
     });
 });
+// matchMedia mediaQuery
+// Removes hamburger menu when screen size goes above small screen size
+let x = window.matchMedia("(min-width: 47.9em)");
+x.addEventListener('change', ()=>{
+    if (x.matches) {
+        console.log('hello');
+        hamburgerMenu.classList.remove('show');
+        hamburgerButton.classList.remove('open');
+    }
+});
 // Function runs when reloaded
 const init = ()=>{
     // Render Mercury data by default
