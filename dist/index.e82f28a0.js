@@ -526,6 +526,9 @@ const mobileSubMenuLinks = document.querySelectorAll('.sub-menu--mobile__link');
 const mobileOverviewLink = mobileSubMenuLinks[0];
 const tabletSubMenuLinks = document.querySelectorAll('.sub-menu--tablet__link');
 const tabletOverviewLink = tabletSubMenuLinks[0];
+const overviewLinks = document.querySelectorAll('.overview-link');
+const structureLinks = document.querySelectorAll('.structure-link');
+const surfaceLinks = document.querySelectorAll('.surface-link');
 const navLinks = document.querySelectorAll('.nav__link');
 const planetImg = document.getElementById('planet__img');
 const planetGeoImg = document.getElementById('planet__geo-img');
@@ -585,6 +588,12 @@ const selectLink = (links, targetLink)=>{
         link !== targetLink && isSelected(link) && link.classList.remove('selected');
     });
     targetLink.classList.add('selected');
+};
+// Unselect selected link by removing 'selected' class
+const removeSelectedLink = (links)=>{
+    links.forEach((link)=>{
+        isSelected(link) && link.classList.remove('selected');
+    });
 };
 // Render planet title
 const renderPlanetTitle = (planetData1)=>{
@@ -819,20 +828,32 @@ navLinks.forEach((link)=>{
 mobileSubMenuLinks.forEach((link)=>{
     link.addEventListener('click', ()=>{
         selectLink(mobileSubMenuLinks, link);
-        // Render proper content info
-        link.id === 'overview-link' && renderPlanetContent('overview', currentPlanetData);
-        link.id === 'structure-link' && renderPlanetContent('structure', currentPlanetData);
-        link.id === 'surface-link' && renderPlanetContent('geology', currentPlanetData);
+        if (link.classList.contains('overview-link')) {
+            selectLink(tabletSubMenuLinks, tabletSubMenuLinks[0]);
+            renderPlanetContent('overview', currentPlanetData);
+        } else if (link.classList.contains('structure-link')) {
+            selectLink(tabletSubMenuLinks, tabletSubMenuLinks[1]);
+            renderPlanetContent('structure', currentPlanetData);
+        } else {
+            selectLink(tabletSubMenuLinks, tabletSubMenuLinks[2]);
+            renderPlanetContent('geology', currentPlanetData);
+        }
     });
 });
 // Tablet sub-menu link handler
 tabletSubMenuLinks.forEach((link)=>{
     link.addEventListener('click', ()=>{
         selectLink(tabletSubMenuLinks, link);
-        // Render proper content info
-        link.id === 'overview-link' && renderPlanetContent('overview', currentPlanetData);
-        link.id === 'structure-link' && renderPlanetContent('structure', currentPlanetData);
-        link.id === 'surface-link' && renderPlanetContent('geology', currentPlanetData);
+        if (link.classList.contains('overview-link')) {
+            selectLink(mobileSubMenuLinks, mobileSubMenuLinks[0]);
+            renderPlanetContent('overview', currentPlanetData);
+        } else if (link.classList.contains('structure-link')) {
+            selectLink(mobileSubMenuLinks, mobileSubMenuLinks[1]);
+            renderPlanetContent('structure', currentPlanetData);
+        } else {
+            selectLink(mobileSubMenuLinks, mobileSubMenuLinks[2]);
+            renderPlanetContent('geology', currentPlanetData);
+        }
     });
 });
 // Function runs when reloaded
