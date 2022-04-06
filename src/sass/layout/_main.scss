@@ -53,11 +53,42 @@
       bottom: 0;
       height: 0.4rem;
       // Needs to change dynamically depending on planet
-      background-color: #419ebb;
 
       left: 50%;
       right: 50%;
       transition: 0.16s all 0.025s;
+    }
+
+    &.mercury::after {
+      background-color: $c-link-mercury;
+    }
+
+    &.venus::after {
+      background-color: $c-link-venus;
+    }
+
+    &.earth::after {
+      background-color: $c-link-earth;
+    }
+
+    &.mars::after {
+      background-color: $c-link-mars;
+    }
+
+    &.jupiter::after {
+      background-color: $c-link-jupiter;
+    }
+
+    &.saturn::after {
+      background-color: $c-link-saturn;
+    }
+
+    &.uranus::after {
+      background-color: $c-link-uranus;
+    }
+
+    &.neptune::after {
+      background-color: $c-link-neptune;
     }
 
     &:hover::after {
@@ -102,7 +133,38 @@
     }
 
     &.selected {
-      background-color: $c-turquoise;
+      &.mercury {
+        background-color: $c-link-mercury;
+      }
+
+      &.venus {
+        background-color: $c-link-venus;
+      }
+
+      &.earth {
+        background-color: $c-link-earth;
+      }
+
+      &.mars {
+        background-color: $c-link-mars;
+      }
+
+      &.jupiter {
+        background-color: $c-link-jupiter;
+      }
+
+      &.saturn {
+        background-color: $c-link-saturn;
+      }
+
+      &.uranus {
+        background-color: $c-link-uranus;
+      }
+
+      &.neptune {
+        background-color: $c-link-neptune;
+      }
+
       border: 1px solid transparent;
     }
   }

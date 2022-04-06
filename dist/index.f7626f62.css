@@ -490,10 +490,41 @@ body.hamburger-menu-open {
   position: absolute;
   bottom: 0;
   height: 0.4rem;
-  background-color: #419ebb;
   left: 50%;
   right: 50%;
   transition: 0.16s all 0.025s;
+}
+
+.sub-menu--mobile__link.mercury::after {
+  background-color: #419ebb;
+}
+
+.sub-menu--mobile__link.venus::after {
+  background-color: #eda249;
+}
+
+.sub-menu--mobile__link.earth::after {
+  background-color: #6f2ed6;
+}
+
+.sub-menu--mobile__link.mars::after {
+  background-color: #d14c32;
+}
+
+.sub-menu--mobile__link.jupiter::after {
+  background-color: #d83a34;
+}
+
+.sub-menu--mobile__link.saturn::after {
+  background-color: #cd5120;
+}
+
+.sub-menu--mobile__link.uranus::after {
+  background-color: #1ec2a4;
+}
+
+.sub-menu--mobile__link.neptune::after {
+  background-color: #2d68f0;
 }
 
 .sub-menu--mobile__link:hover::after {
@@ -534,8 +565,39 @@ body.hamburger-menu-open {
 }
 
 .sub-menu--tablet__link.selected {
-  background-color: #419ebb;
   border: 1px solid transparent;
+}
+
+.sub-menu--tablet__link.selected.mercury {
+  background-color: #419ebb;
+}
+
+.sub-menu--tablet__link.selected.venus {
+  background-color: #eda249;
+}
+
+.sub-menu--tablet__link.selected.earth {
+  background-color: #6f2ed6;
+}
+
+.sub-menu--tablet__link.selected.mars {
+  background-color: #d14c32;
+}
+
+.sub-menu--tablet__link.selected.jupiter {
+  background-color: #d83a34;
+}
+
+.sub-menu--tablet__link.selected.saturn {
+  background-color: #cd5120;
+}
+
+.sub-menu--tablet__link.selected.uranus {
+  background-color: #1ec2a4;
+}
+
+.sub-menu--tablet__link.selected.neptune {
+  background-color: #2d68f0;
 }
 
 .sub-menu--tablet .num {

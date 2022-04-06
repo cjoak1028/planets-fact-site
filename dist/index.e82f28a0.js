@@ -774,20 +774,77 @@ hamburgerButton.addEventListener('click', ()=>{
         }, 500);
     }
 });
-hamburgerLinks.forEach((link)=>{
-    link.addEventListener('click', ()=>{
+hamburgerLinks.forEach((link1)=>{
+    link1.addEventListener('click', ()=>{
+        // RENDER PLANET DATA
+        if (link1.id === 'mercury-link') {
+            renderPlanetData(mercuryData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link mercury';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link mercury';
+            });
+        } else if (link1.id === 'venus-link') {
+            renderPlanetData(venusData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link venus';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link venus';
+            });
+        } else if (link1.id === 'earth-link') {
+            renderPlanetData(earthData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link earth';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link earth';
+            });
+        } else if (link1.id === 'mars-link') {
+            renderPlanetData(marsData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link mars';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link mars';
+            });
+        } else if (link1.id === 'jupiter-link') {
+            renderPlanetData(jupiterData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link jupiter';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link jupiter';
+            });
+        } else if (link1.id === 'saturn-link') {
+            renderPlanetData(saturnData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link saturn';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link saturn';
+            });
+        } else if (link1.id === 'uranus-link') {
+            renderPlanetData(uranusData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link uranus';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link uranus';
+            });
+        } else {
+            renderPlanetData(neptuneData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link neptune';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link neptune';
+            });
+        }
         // Overview sub-menu (for all views) link is selected by default
         selectLink(mobileSubMenuLinks, mobileOverviewLink);
         selectLink(tabletSubMenuLinks, tabletOverviewLink);
-        // RENDER PLANET DATA
-        if (link.id === 'mercury-link') renderPlanetData(mercuryData);
-        else if (link.id === 'venus-link') renderPlanetData(venusData);
-        else if (link.id === 'earth-link') renderPlanetData(earthData);
-        else if (link.id === 'mars-link') renderPlanetData(marsData);
-        else if (link.id === 'jupiter-link') renderPlanetData(jupiterData);
-        else if (link.id === 'saturn-link') renderPlanetData(saturnData);
-        else if (link.id === 'uranus-link') renderPlanetData(uranusData);
-        else renderPlanetData(neptuneData);
         // CLOSE HAMBURGER MENU;
         hamburgerButton.classList.toggle('open');
         hamburgerMenu.classList = 'hamburger-menu collapsing';
@@ -806,32 +863,89 @@ hamburgerLinks.forEach((link)=>{
     });
 });
 // Navigation link event handler
-navLinks.forEach((link)=>{
-    link.addEventListener('click', ()=>{
+navLinks.forEach((link2)=>{
+    link2.addEventListener('click', ()=>{
         // Select target link (planet)
-        selectLink(navLinks, link);
+        selectLink(navLinks, link2);
+        // Render planet data REFACTOR
+        if (link2.id === 'mercury-link') {
+            renderPlanetData(mercuryData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link mercury';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link mercury';
+            });
+        } else if (link2.id === 'venus-link') {
+            renderPlanetData(venusData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link venus';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link venus';
+            });
+        } else if (link2.id === 'earth-link') {
+            renderPlanetData(earthData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link earth';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link earth';
+            });
+        } else if (link2.id === 'mars-link') {
+            renderPlanetData(marsData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link mars';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link mars';
+            });
+        } else if (link2.id === 'jupiter-link') {
+            renderPlanetData(jupiterData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link jupiter';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link jupiter';
+            });
+        } else if (link2.id === 'saturn-link') {
+            renderPlanetData(saturnData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link saturn';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link saturn';
+            });
+        } else if (link2.id === 'uranus-link') {
+            renderPlanetData(uranusData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link uranus';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link uranus';
+            });
+        } else {
+            renderPlanetData(neptuneData);
+            mobileSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--mobile__link neptune';
+            });
+            tabletSubMenuLinks.forEach((link)=>{
+                link.classList = 'sub-menu--tablet__link neptune';
+            });
+        }
         // Overview sub-menu (for all views) link is selected by default
         selectLink(mobileSubMenuLinks, mobileOverviewLink);
         selectLink(tabletSubMenuLinks, tabletOverviewLink);
-        // Render planet data REFACTOR
-        if (link.id === 'mercury-link') renderPlanetData(mercuryData);
-        else if (link.id === 'venus-link') renderPlanetData(venusData);
-        else if (link.id === 'earth-link') renderPlanetData(earthData);
-        else if (link.id === 'mars-link') renderPlanetData(marsData);
-        else if (link.id === 'jupiter-link') renderPlanetData(jupiterData);
-        else if (link.id === 'saturn-link') renderPlanetData(saturnData);
-        else if (link.id === 'uranus-link') renderPlanetData(uranusData);
-        else renderPlanetData(neptuneData);
     });
 });
 // Mobile sub-menu link handler
 mobileSubMenuLinks.forEach((link)=>{
     link.addEventListener('click', ()=>{
         selectLink(mobileSubMenuLinks, link);
-        if (link.classList.contains('overview-link')) {
+        if (link.id === 'mobile-overview-link') {
             selectLink(tabletSubMenuLinks, tabletSubMenuLinks[0]);
             renderPlanetContent('overview', currentPlanetData);
-        } else if (link.classList.contains('structure-link')) {
+        } else if (link.id === 'mobile-structure-link') {
             selectLink(tabletSubMenuLinks, tabletSubMenuLinks[1]);
             renderPlanetContent('structure', currentPlanetData);
         } else {
@@ -844,10 +958,10 @@ mobileSubMenuLinks.forEach((link)=>{
 tabletSubMenuLinks.forEach((link)=>{
     link.addEventListener('click', ()=>{
         selectLink(tabletSubMenuLinks, link);
-        if (link.classList.contains('overview-link')) {
+        if (link.id === 'tablet-overview-link') {
             selectLink(mobileSubMenuLinks, mobileSubMenuLinks[0]);
             renderPlanetContent('overview', currentPlanetData);
-        } else if (link.classList.contains('structure-link')) {
+        } else if (link.id === 'tablet-structure-link') {
             selectLink(mobileSubMenuLinks, mobileSubMenuLinks[1]);
             renderPlanetContent('structure', currentPlanetData);
         } else {
