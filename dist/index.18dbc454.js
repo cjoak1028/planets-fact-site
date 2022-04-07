@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"l4AUa":[function(require,module,exports) {
+})({"g9TDx":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "ba60c367739bf03c";
+module.bundle.HMR_BUNDLE_ID = "0bcb44a518dbc454";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,9 +518,85 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"ebWYT":[function(require,module,exports) {
-console.log('still not working??');
+},{}],"1SICI":[function(require,module,exports) {
+// const hamburgerMenuLinks = document.querySelectorAll('.hamburger-menu__link');
+var _hamburgerMenu = require("./hamburger-menu");
+const hamburgerButton = document.querySelector('.hamburger-button');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+hamburgerButton.addEventListener('click', ()=>{
+    hamburgerButton.classList.toggle('open');
+    hamburgerMenu.classList.toggle('show');
+    hamburgerMenu.classList.contains('show') ? _hamburgerMenu.openHamburgerMenu(hamburgerButton, hamburgerMenu) : _hamburgerMenu.closeHamburgerMenu(hamburgerButton, hamburgerMenu);
+});
 
-},{}]},["l4AUa","ebWYT"], "ebWYT", "parcelRequire16e4")
+},{"./hamburger-menu":"hbEsA"}],"hbEsA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "openHamburgerMenu", ()=>openHamburgerMenu
+);
+parcelHelpers.export(exports, "closeHamburgerMenu", ()=>closeHamburgerMenu
+);
+const openHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
+    hamburgerButton.classList.add('disabled');
+    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    // Make body unscrollable
+    document.body.classList.add('overflow-hidden');
+    setTimeout(()=>{
+        hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
+        hamburgerMenu.style.opacity = '100%';
+    }, 1);
+    setTimeout(()=>{
+        hamburgerMenu.classList = 'hamburger-menu collapse show';
+        hamburgerButton.classList.remove('disabled');
+    }, 500);
+};
+const closeHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
+    hamburgerButton.classList.add('disabled');
+    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    // Make body scrollable
+    document.body.classList.remove('overflow-hidden');
+    setTimeout(()=>{
+        hamburgerMenu.style.height = '0';
+        hamburgerMenu.style.opacity = '0';
+    }, 1);
+    setTimeout(()=>{
+        hamburgerMenu.classList = 'hamburger-menu collapse';
+        hamburgerMenu.style.height = '';
+        hamburgerMenu.style.opacity = '';
+        hamburgerButton.classList.remove('disabled');
+    }, 500);
+};
 
-//# sourceMappingURL=index.739bf03c.js.map
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["g9TDx","1SICI"], "1SICI", "parcelRequire16e4")
+
+//# sourceMappingURL=index.18dbc454.js.map
