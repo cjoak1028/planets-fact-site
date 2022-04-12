@@ -20,10 +20,10 @@ const planetGeoImg = document.getElementById('planet__geo-img');
 const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
-const planetRot = document.querySelector('.stat__rotation');
-const planetRev = document.querySelector('.stat__revolution');
-const planetRad = document.querySelector('.stat__radius');
-const planetTemp = document.querySelector('.stat__temp');
+const planetRot = document.querySelector('.stat-rotation');
+const planetRev = document.querySelector('.stat-revolution');
+const planetRad = document.querySelector('.stat-radius');
+const planetTemp = document.querySelector('.stat-temp');
 
 const planetData = require('../../data.json');
 const mercuryData = planetData[0];
@@ -70,8 +70,6 @@ const neptunePlanetImg = require('../assets/planet-neptune.svg');
 const neptuneInternalImg = require('../assets/planet-neptune-internal.svg');
 const neptuneGeologyImg = require('../assets/geology-neptune.png');
 
-// console.log(mercuryImg);
-
 let currentPlanetData = mercuryData;
 
 // HELPER FUNCTIONS
@@ -87,13 +85,6 @@ const selectLink = (links, targetLink) => {
         (link !== targetLink && isSelected(link)) && link.classList.remove('selected');
     });
     targetLink.classList.add('selected');
-};
-
-// Unselect selected link by removing 'selected' class
-const removeSelectedLink = (links) => {
-    links.forEach(link => {
-        isSelected(link) && link.classList.remove('selected');
-    });
 };
 
 // Render planet title
@@ -253,6 +244,51 @@ const renderPlanetData = (planetData) => {
     renderPlanetImg(planetData);
     currentPlanetData = planetData;
 };
+
+// Hamburger button event handler
+hamburgerButton.addEventListener('click', () => {
+    hamburgerButton.classList.add('disabled');
+    hamburgerButton.classList.toggle('open');
+    hamburgerMenu.classList.toggle('show');
+
+    // Show menu
+    if (hamburgerMenu.classList.contains('show')) {
+        hamburgerMenu.classList = 'hamburger-menu collapsing';
+
+        // Make body unscrollable
+        document.body.classList.add('hamburger-menu-open');
+
+
+        setTimeout(() => {
+            hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
+            hamburgerMenu.style.opacity = '100%';
+        }, 1);
+
+        setTimeout(() => {
+            hamburgerMenu.classList = 'hamburger-menu collapse show';
+            hamburgerButton.classList.remove('disabled');
+        }, 500);
+    }
+    // Close menu
+    else {
+        hamburgerMenu.classList = 'hamburger-menu collapsing';
+
+        // Make body scrollable
+        document.body.classList.remove('hamburger-menu-open');
+
+        setTimeout(() => {
+            hamburgerMenu.style.height = '0';
+            hamburgerMenu.style.opacity = '0';
+        }, 1)
+
+        setTimeout(() => {
+            hamburgerMenu.classList = 'hamburger-menu collapse';
+            hamburgerMenu.style.height = '';
+            hamburgerMenu.style.opacity = '';
+            hamburgerButton.classList.remove('disabled');
+        }, 500);
+    };
+});
 
 hamburgerLinks.forEach((link) => {
     link.addEventListener('click', () => {

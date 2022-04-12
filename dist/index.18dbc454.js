@@ -519,27 +519,12 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
-// const hamburgerMenuLinks = document.querySelectorAll('.hamburger-menu__link');
-var _hamburgerMenu = require("./hamburger-menu");
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-hamburgerButton.addEventListener('click', ()=>{
-    hamburgerButton.classList.toggle('open');
-    hamburgerMenu.classList.toggle('show');
-    hamburgerMenu.classList.contains('show') ? _hamburgerMenu.openHamburgerMenu(hamburgerButton, hamburgerMenu) : _hamburgerMenu.closeHamburgerMenu(hamburgerButton, hamburgerMenu);
-});
-
-},{"./hamburger-menu":"hbEsA"}],"hbEsA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "openHamburgerMenu", ()=>openHamburgerMenu
-);
-parcelHelpers.export(exports, "closeHamburgerMenu", ()=>closeHamburgerMenu
-);
-const openHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
-    hamburgerButton.classList.add('disabled');
+const planetLinks = document.querySelectorAll('.planet-link');
+const openHamburgerMenu = ()=>{
     hamburgerMenu.classList = 'hamburger-menu collapsing';
-    // Make body unscrollable
+    // Prevent body from scrolling when hamburger button is open
     document.body.classList.add('overflow-hidden');
     setTimeout(()=>{
         hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
@@ -550,10 +535,8 @@ const openHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
         hamburgerButton.classList.remove('disabled');
     }, 500);
 };
-const closeHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
-    hamburgerButton.classList.add('disabled');
+const closeHamburgerMenu = ()=>{
     hamburgerMenu.classList = 'hamburger-menu collapsing';
-    // Make body scrollable
     document.body.classList.remove('overflow-hidden');
     setTimeout(()=>{
         hamburgerMenu.style.height = '0';
@@ -566,36 +549,22 @@ const closeHamburgerMenu = (hamburgerButton, hamburgerMenu)=>{
         hamburgerButton.classList.remove('disabled');
     }, 500);
 };
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
+hamburgerButton.addEventListener('click', ()=>{
+    hamburgerMenu.classList.toggle('show');
+    hamburgerButton.classList.toggle('open');
+    hamburgerButton.classList.add('disabled');
+    hamburgerMenu.classList.contains('show') ? openHamburgerMenu() : closeHamburgerMenu();
+});
+planetLinks.forEach((link)=>{
+    link.addEventListener('click', ()=>{
+        // Navigation menu planet link for tablet+ view 
+        if (link.classList.contains('nav__link')) console.log('NAV PLANET LINK CLICKED!');
+        else {
+            console.log('HAMBURGER MENU PLANET LINK CLICKED!');
+            closeHamburgerMenu();
+        }
     });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+});
 
 },{}]},["g9TDx","1SICI"], "1SICI", "parcelRequire16e4")
 
