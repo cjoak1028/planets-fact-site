@@ -39,46 +39,66 @@
         <ul class="nav__list flex flex-jc-sb flex-ai-c">
           <li class="nav__item">
             <a
-              id="mercury-link"
+              index="0"
+              planet="mercury"
               class="planet-link nav__link nav__link--mercury selected"
-              >Mercury</a
             >
+              Mercury
+            </a>
           </li>
           <li class="nav__item">
-            <a id="venus-link" class="planet-link nav__link nav__link--venus"
-              >Venus</a
+            <a
+              index="1"
+              planet="venus"
+              class="planet-link nav__link nav__link--venus"
             >
+              Venus
+            </a>
           </li>
           <li class="nav__item">
-            <a id="earth-link" class="planet-link nav__link nav__link--earth"
+            <a
+              index="2"
+              planet="earth"
+              class="planet-link nav__link nav__link--earth"
               >Earth</a
             >
           </li>
           <li class="nav__item">
-            <a id="mars-link" class="planet-link nav__link nav__link--mars"
+            <a
+              index="3"
+              planet="mars"
+              class="planet-link nav__link nav__link--mars"
               >Mars</a
             >
           </li>
           <li class="nav__item">
             <a
-              id="jupiter-link"
+              index="4"
+              planet="jupiter"
               class="planet-link nav__link nav__link--jupiter"
               >Jupiter</a
             >
           </li>
           <li class="nav__item">
-            <a id="saturn-link" class="planet-link nav__link nav__link--saturn"
+            <a
+              index="5"
+              planet="saturn"
+              class="planet-link nav__link nav__link--saturn"
               >Saturn</a
             >
           </li>
           <li class="nav__item">
-            <a id="uranus-link" class="planet-link nav__link nav__link--uranus"
+            <a
+              index="6"
+              planet="uranus"
+              class="planet-link nav__link nav__link--uranus"
               >Uranus</a
             >
           </li>
           <li class="nav__item">
             <a
-              id="neptune-link"
+              index="7"
+              planet="neptune"
               class="planet-link nav__link nav__link--neptune"
               >Neptune</a
             >
@@ -92,8 +112,9 @@
       <ul class="hamburger-menu__list">
         <li class="hamburger-menu__item">
           <a
-            id="mercury-link"
-            class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
+            index="0"
+            planet="mercury"
+            class="planet-link hamburger-menu__link selected flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
               <span class="bullet bullet--mercury"></span>
@@ -104,7 +125,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="venus-link"
+            index="1"
+            planet="venus"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -116,7 +138,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="earth-link"
+            index="2"
+            planet="earth"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -128,7 +151,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="mars-link"
+            index="3"
+            planet="mars"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -140,7 +164,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="jupiter-link"
+            index="4"
+            planet="jupiter"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -152,7 +177,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="saturn-link"
+            index="5"
+            planet="saturn"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -164,7 +190,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="uranus-link"
+            index="6"
+            planet="uranus"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -176,7 +203,8 @@
         </li>
         <li class="hamburger-menu__item">
           <a
-            id="neptune-link"
+            index="7"
+            planet="neptune"
             class="planet-link hamburger-menu__link flex flex-ai-c flex-jc-sb"
           >
             <span class="flex flex-ai-c">
@@ -195,21 +223,21 @@
           <li class="sub-menu--mobile__item">
             <a
               id="mobile-overview-link"
-              class="sub-menu--mobile__link mercury selected"
+              class="sub-menu-link sub-menu--mobile__link mercury selected"
               >Overview</a
             >
           </li>
           <li class="sub-menu--mobile__item">
             <a
               id="mobile-structure-link"
-              class="sub-menu--mobile__link structure-link"
+              class="sub-menu-link sub-menu--mobile__link structure-link"
               >Structure</a
             >
           </li>
           <li class="sub-menu--mobile__item">
             <a
               id="mobile-surface-link"
-              class="sub-menu--mobile__link surface-link"
+              class="sub-menu-link sub-menu--mobile__link surface-link"
               >Surface</a
             >
           </li>
@@ -256,21 +284,21 @@
                 <li class="sub-menu--tablet__item">
                   <a
                     id="tablet-overview-link"
-                    class="sub-menu--tablet__link mercury selected"
+                    class="sub-menu-link sub-menu--tablet__link mercury selected"
                     ><span class="num">01</span>Overview</a
                   >
                 </li>
                 <li class="sub-menu--tablet__item">
                   <a
                     id="tablet-structure-link"
-                    class="sub-menu--tablet__link structure-link mercury"
+                    class="sub-menu-link sub-menu--tablet__link structure-link mercury"
                     ><span class="num">02</span>Structure</a
                   >
                 </li>
                 <li class="sub-menu--tablet__item">
                   <a
                     id="tablet-surface-link"
-                    class="sub-menu--tablet__link surface-link mercury"
+                    class="sub-menu-link sub-menu--tablet__link surface-link mercury"
                     ><span class="num">03</span>Surface</a
                   >
                 </li>

@@ -519,13 +519,21 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
+var _model = require("./model");
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const planetLinks = document.querySelectorAll('.planet-link');
+const navLinks = document.querySelectorAll('.nav__link');
+const hamburgerMenuLinks = document.querySelectorAll('.hamburger-menu__link');
+const subMenuLinks = document.querySelectorAll('.sub-menu-link');
+const planetTitle = document.querySelector('.planet__title');
+const planetStats = document.querySelectorAll('.planet-stat');
+let prevPlanetIndex = '0';
 const openHamburgerMenu = ()=>{
-    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    hamburgerButton.classList.add('open');
     // Prevent body from scrolling when hamburger button is open
     document.body.classList.add('overflow-hidden');
+    hamburgerMenu.classList = 'hamburger-menu collapsing';
     setTimeout(()=>{
         hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
         hamburgerMenu.style.opacity = '100%';
@@ -536,35 +544,109 @@ const openHamburgerMenu = ()=>{
     }, 500);
 };
 const closeHamburgerMenu = ()=>{
-    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    hamburgerButton.classList.remove('open');
     document.body.classList.remove('overflow-hidden');
+    hamburgerMenu.classList = 'hamburger-menu collapsing';
     setTimeout(()=>{
         hamburgerMenu.style.height = '0';
         hamburgerMenu.style.opacity = '0';
     }, 1);
     setTimeout(()=>{
         hamburgerMenu.classList = 'hamburger-menu collapse';
-        hamburgerMenu.style.height = '';
-        hamburgerMenu.style.opacity = '';
+        hamburgerMenu.removeAttribute('style');
         hamburgerButton.classList.remove('disabled');
     }, 500);
 };
-hamburgerButton.addEventListener('click', ()=>{
-    hamburgerMenu.classList.toggle('show');
-    hamburgerButton.classList.toggle('open');
-    hamburgerButton.classList.add('disabled');
-    hamburgerMenu.classList.contains('show') ? openHamburgerMenu() : closeHamburgerMenu();
-});
-planetLinks.forEach((link)=>{
-    link.addEventListener('click', ()=>{
-        // Navigation menu planet link for tablet+ view 
-        if (link.classList.contains('nav__link')) console.log('NAV PLANET LINK CLICKED!');
-        else {
-            console.log('HAMBURGER MENU PLANET LINK CLICKED!');
-            closeHamburgerMenu();
-        }
+const init = (planetsData)=>{
+    // Handle click event for hamburger button
+    hamburgerButton.addEventListener('click', ()=>{
+        hamburgerMenu.classList.toggle('show');
+        hamburgerButton.classList.add('disabled');
+        hamburgerMenu.classList.contains('show') ? openHamburgerMenu() : closeHamburgerMenu();
     });
+    // Handle click event for each planet link
+    planetLinks.forEach((link)=>{
+        link.addEventListener('click', ()=>{
+            const targetPlanetIndex = link.getAttribute('index');
+            // Prevent anything from happening if planet link is already selected
+            if (targetPlanetIndex === prevPlanetIndex) return;
+            // Unselect previous nav + hamburger-menu link
+            navLinks[prevPlanetIndex].classList.remove('selected');
+            hamburgerMenuLinks[prevPlanetIndex].classList.remove('selected');
+            // Select targeted nav + hamburger-menu link
+            navLinks[targetPlanetIndex].classList.add('selected');
+            hamburgerMenuLinks[targetPlanetIndex].classList.add('selected');
+            const currPlanetData = planetsData[targetPlanetIndex];
+            // UPDATE PLANET TITLE
+            planetTitle.innerHTML = currPlanetData.name;
+            // SELECT OVERVIEW SUB-MENU
+            // UPDATE PLANET STATS
+            planetStats.forEach((stat)=>{
+                if (stat.classList.contains('stat-rotation')) stat.innerHTML = currPlanetData.rotation;
+                else if (stat.classList.contains('stat-revolution')) stat.innerHTML = currPlanetData.revolution;
+                else if (stat.classList.contains('stat-radius')) stat.innerHTML = currPlanetData.radius;
+                else stat.innerHTML = currPlanetData.temperature;
+            });
+            // Navigation menu planet link for tablet+ view 
+            if (link.classList.contains('nav__link')) console.log('NAV PLANET LINK CLICKED!');
+            else {
+                console.log('HAMBURGER MENU PLANET LINK CLICKED!');
+                closeHamburgerMenu();
+            }
+            prevPlanetIndex = targetPlanetIndex;
+        });
+    });
+};
+_model.getData('./data.json').then((data)=>{
+    init(data);
+}).catch((err)=>{
+    console.error(err);
 });
+
+},{"./model":"Y4A21"}],"Y4A21":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getData", ()=>getData
+);
+const getData = async (filepath)=>{
+    try {
+        const res = await fetch(filepath);
+        const json = await res.json();
+        return json;
+    } catch (error) {
+        throw new Error(error);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["g9TDx","1SICI"], "1SICI", "parcelRequire16e4")
 

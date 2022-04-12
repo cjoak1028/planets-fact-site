@@ -98,7 +98,6 @@
 .hamburger-menu {
   background-color: $c-blue-dark;
   width: 100%;
-  // padding: 0 2.4rem;
   padding-bottom: 4.8rem; // why? (margin-top + padding)?
 
   position: fixed;
@@ -119,14 +118,9 @@
   &__item {
     height: 6.5rem;
     cursor: pointer;
-    padding: 0 2.4rem;
 
     &:not(:last-child) {
       border-bottom: 1px solid rgba(#979797, 10%);
-    }
-
-    &:hover {
-      background-color: rgba(#979797, 10%);
     }
 
     a {
@@ -136,10 +130,16 @@
       height: 100%;
       display: flex;
       align-items: center;
+      padding: 0 2.4rem;
 
       //TYPOGRAPHY - MOBILE
       font-weight: 700;
       font-size: 1.5rem;
+
+      &:hover,
+      &.selected {
+        background-color: rgba(#979797, 10%);
+      }
     }
   }
 
@@ -152,7 +152,6 @@
   &.collapsing {
     opacity: 0;
     height: 0;
-    overflow: hidden;
   }
 }
 
