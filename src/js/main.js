@@ -6,11 +6,15 @@ const planetLinks = document.querySelectorAll('.planet-link');
 const navLinks = document.querySelectorAll('.nav__link');
 const hamburgerMenuLinks = document.querySelectorAll('.hamburger-menu__link');
 const subMenuLinks = document.querySelectorAll('.sub-menu-link');
+const subMenuMobileLinks = document.querySelectorAll('.sub-menu--mobile__link');
+const subMenuTabletLinks = document.querySelectorAll('.sub-menu--tablet__link');
 
 const planetTitle = document.querySelector('.planet__title');
 const planetStats = document.querySelectorAll('.planet-stat');
 
-let prevPlanetIndex = '0';
+let currPlanet = 'mercury';
+let currPlanetIndex = '0';
+let currSubMenuIndex = '0';
 
 const openHamburgerMenu = () => {
     hamburgerButton.classList.add('open');
@@ -20,7 +24,7 @@ const openHamburgerMenu = () => {
     hamburgerMenu.classList = 'hamburger-menu collapsing';
 
     setTimeout(() => {
-        hamburgerMenu.style.height = 'calc(100% - 6.8rem)'; //6.8rem is header height
+        hamburgerMenu.style.height = `calc(100% - 6.8rem)`; //6.8rem is height of header
         hamburgerMenu.style.opacity = '100%';
     }, 1);
 
@@ -59,19 +63,30 @@ const init = (planetsData) => {
     // Handle click event for each planet link
     planetLinks.forEach(link => {
         link.addEventListener('click', () => {
+            const prevPlanet = currPlanet;
             const targetPlanetIndex = link.getAttribute('index');
             // Prevent anything from happening if planet link is already selected
-            if (targetPlanetIndex === prevPlanetIndex) return;
+            if (targetPlanetIndex === currPlanetIndex) return;
 
-            // Unselect previous nav + hamburger-menu link
-            navLinks[prevPlanetIndex].classList.remove('selected');
-            hamburgerMenuLinks[prevPlanetIndex].classList.remove('selected');
+            // Unselect previously selected nav and hamburger-menu links
+            navLinks[currPlanetIndex].classList.remove('selected');
+            hamburgerMenuLinks[currPlanetIndex].classList.remove('selected');
 
-            // Select targeted nav + hamburger-menu link
+            // Select newly slected nav and hamburger-menu links
             navLinks[targetPlanetIndex].classList.add('selected');
             hamburgerMenuLinks[targetPlanetIndex].classList.add('selected');
 
+            currPlanetIndex = targetPlanetIndex;
+
             const currPlanetData = planetsData[targetPlanetIndex];
+            currPlanet = currPlanetData.name.toLowerCase();
+
+            // Pass currPlanet to subMenuLinks by setting their classes
+            // This is the basis of setting appropriate background color depending on value of currPlanet
+            subMenuLinks.forEach(link => {
+                link.classList.remove(prevPlanet);
+                link.classList.add(currPlanet);
+            })
 
             // UPDATE PLANET TITLE
             planetTitle.innerHTML = currPlanetData.name;
@@ -91,17 +106,30 @@ const init = (planetsData) => {
                 };
             });
 
-            // Navigation menu planet link for tablet+ view 
-            if (link.classList.contains('nav__link')) {
-                console.log('NAV PLANET LINK CLICKED!');
-            }
             // Hamburger menu planet link for mobile view
-            else {
-                console.log('HAMBURGER MENU PLANET LINK CLICKED!');
-                closeHamburgerMenu()
+            if (link.classList.contains('hamburger-menu__link')) {
+                // Close hamburger menu when hamburger menu link is clicked
+                closeHamburgerMenu();
             }
+        });
+    });
 
-            prevPlanetIndex = targetPlanetIndex;
+    subMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetSubMenuIndex = link.getAttribute('index');
+            if (targetSubMenuIndex === currSubMenuIndex) return;
+
+            // Unselect previously selected content link
+            subMenuMobileLinks[currSubMenuIndex].classList.remove('selected');
+            subMenuTabletLinks[currSubMenuIndex].classList.remove('selected');
+
+            // Select newly selected content link
+            subMenuMobileLinks[targetSubMenuIndex].classList.add('selected');
+            subMenuTabletLinks[targetSubMenuIndex].classList.add('selected');
+
+            currSubMenuIndex = targetSubMenuIndex;
+
+            const currPlanetData = planetsData[currPlanetIndex];
         });
     });
 };

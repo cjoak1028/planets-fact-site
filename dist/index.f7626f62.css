@@ -372,7 +372,7 @@ body.overflow-hidden {
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 }
 
-.hamburger-menu__item a {
+.hamburger-menu__link {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
@@ -384,7 +384,7 @@ body.overflow-hidden {
   font-size: 1.5rem;
 }
 
-.hamburger-menu__item a:hover, .hamburger-menu__item a.selected {
+.hamburger-menu__link:hover, .hamburger-menu__link.selected {
   background-color: rgba(151, 151, 151, 0.1);
 }
 

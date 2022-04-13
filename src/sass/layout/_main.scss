@@ -133,6 +133,8 @@
     }
 
     &.selected {
+      border: 1px solid transparent;
+
       &.mercury {
         background-color: $c-link-mercury;
       }
@@ -164,8 +166,6 @@
       &.neptune {
         background-color: $c-link-neptune;
       }
-
-      border: 1px solid transparent;
     }
   }
 
