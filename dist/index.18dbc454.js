@@ -528,7 +528,11 @@ const hamburgerMenuLinks = document.querySelectorAll('.hamburger-menu__link');
 const subMenuLinks = document.querySelectorAll('.sub-menu-link');
 const subMenuMobileLinks = document.querySelectorAll('.sub-menu--mobile__link');
 const subMenuTabletLinks = document.querySelectorAll('.sub-menu--tablet__link');
+const planetImage = document.querySelector('.planet__img');
+const planetGeoImage = document.querySelector('.planet__geo-img');
 const planetTitle = document.querySelector('.planet__title');
+const planetContent = document.querySelector('.planet__content');
+const planetContentSource = document.querySelector('.content-source__link');
 const planetStats = document.querySelectorAll('.planet-stat');
 let currPlanet = 'mercury';
 let currPlanetIndex = '0';
@@ -561,6 +565,8 @@ const closeHamburgerMenu = ()=>{
         hamburgerButton.classList.remove('disabled');
     }, 500);
 };
+const selectSubMenu = (subMenuType)=>{
+};
 const init = (planetsData)=>{
     // Handle click event for hamburger button
     hamburgerButton.addEventListener('click', ()=>{
@@ -590,6 +596,9 @@ const init = (planetsData)=>{
                 link.classList.remove(prevPlanet);
                 link.classList.add(currPlanet);
             });
+            // Pass currPlanet as a class to planet image to apply sizing properties
+            planetImage.classList.remove(prevPlanet);
+            planetImage.classList.add(currPlanet);
             // UPDATE PLANET TITLE
             planetTitle.innerHTML = currPlanetData.name;
             // SELECT OVERVIEW SUB-MENU
@@ -617,6 +626,23 @@ const init = (planetsData)=>{
             subMenuTabletLinks[targetSubMenuIndex].classList.add('selected');
             currSubMenuIndex = targetSubMenuIndex;
             const currPlanetData = planetsData[currPlanetIndex];
+            if (link.classList.contains('overview-link')) {
+                planetImage.src = currPlanetData.images.planet;
+                planetGeoImage.classList.add('hide');
+                planetContent.innerHTML = currPlanetData.overview.content;
+                planetContentSource.href = currPlanetData.overview.source;
+            } else if (link.classList.contains('structure-link')) {
+                planetImage.src = currPlanetData.images.internal;
+                planetGeoImage.classList.add('hide');
+                planetContent.innerHTML = currPlanetData.structure.content;
+                planetContentSource.href = currPlanetData.structure.source;
+            } else {
+                planetImage.src = currPlanetData.images.planet;
+                planetGeoImage.src = currPlanetData.images.geology;
+                planetGeoImage.classList.remove('hide');
+                planetContent.innerHTML = currPlanetData.geology.content;
+                planetContentSource.href = currPlanetData.geology.source;
+            }
         });
     });
 };
