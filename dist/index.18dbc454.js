@@ -590,6 +590,20 @@ const init = (planetsData)=>{
             currPlanetIndex = targetPlanetIndex;
             const currPlanetData = planetsData[targetPlanetIndex];
             currPlanet = currPlanetData.name.toLowerCase();
+            // Select overview sub-menu by default (if not selected)
+            if (currSubMenuIndex !== 0) {
+                // Unselect previously selected sub-menu
+                subMenuMobileLinks[currSubMenuIndex].classList.remove('selected');
+                subMenuTabletLinks[currSubMenuIndex].classList.remove('selected');
+                // Select overview sub-menu
+                subMenuMobileLinks[0].classList.add('selected');
+                subMenuTabletLinks[0].classList.add('selected');
+                currSubMenuIndex = 0;
+            }
+            planetImage.src = currPlanetData.images.planet;
+            planetGeoImage.classList.add('hide');
+            planetContent.innerHTML = currPlanetData.overview.content;
+            planetContentSource.href = currPlanetData.overview.source;
             // Pass currPlanet to subMenuLinks by setting their classes
             // This is the basis of setting appropriate background color depending on value of currPlanet
             subMenuLinks.forEach((link)=>{
