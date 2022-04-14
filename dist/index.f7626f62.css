@@ -164,6 +164,7 @@ body.overflow-hidden {
   position: relative;
   color: #ffffff;
   opacity: 50%;
+  transition: opacity 0.2s ease-out;
 }
 
 @media only screen and (min-width: 47.9em) {
@@ -783,7 +784,6 @@ body.overflow-hidden {
 .planet__container {
   display: flex;
   align-items: center;
-  gap: 7rem;
   margin-bottom: 2.7rem;
 }
 
@@ -802,12 +802,14 @@ body.overflow-hidden {
 @media only screen and (min-width: 47.9em) {
   .planet__info {
     text-align: left;
+    margin-right: 7rem;
   }
 }
 
 @media only screen and (min-width: 65em) {
   .planet__info {
     margin-bottom: 4rem;
+    margin-right: 0;
   }
 }
 
@@ -849,15 +851,10 @@ body.overflow-hidden {
   }
 }
 
-.planet__stats {
-  gap: 0.8rem;
-}
-
 @media only screen and (min-width: 47.9em) {
   .planet__stats {
     width: 100%;
     flex-direction: row;
-    gap: 1.1rem;
     margin: auto;
   }
 }
@@ -868,12 +865,20 @@ body.overflow-hidden {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: 47.9em) {
+  .planet__stat:not(:last-child) {
+    margin-bottom: 0.8rem;
+  }
+}
+
 @media only screen and (min-width: 47.9em) {
   .planet__stat {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
     flex: 1;
+  }
+  .planet__stat:not(:last-child) {
+    margin-right: 1.1rem;
   }
 }
 
@@ -886,6 +891,12 @@ body.overflow-hidden {
 .planet__stat-title {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 47.9em) {
+  .planet__stat-title {
+    margin-bottom: 0.4rem;
+  }
 }
 
 @media only screen and (min-width: 65em) {

@@ -28,6 +28,7 @@
   position: relative;
   color: $c-white;
   opacity: 50%;
+  transition: opacity 0.2s ease-out;
 
   @include respond-above("small") {
     &::after {

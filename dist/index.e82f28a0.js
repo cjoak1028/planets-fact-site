@@ -534,6 +534,7 @@ const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
 const planetStats = document.querySelectorAll('.planet-stat');
+// Check whether browser is Safari or not
 var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 const mediaQueryList = window.matchMedia("screen and (min-width: 47.9em)");
 let currPlanet = 'mercury';
