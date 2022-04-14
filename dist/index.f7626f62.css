@@ -155,7 +155,6 @@ body.overflow-hidden {
 .nav__item {
   text-transform: uppercase;
   line-height: 2.5rem;
-  color: rgba(255, 255, 255, 0.5);
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -163,6 +162,8 @@ body.overflow-hidden {
 
 .nav__link {
   position: relative;
+  color: #ffffff;
+  opacity: 50%;
 }
 
 @media only screen and (min-width: 47.9em) {
@@ -191,7 +192,7 @@ body.overflow-hidden {
 }
 
 .nav__link.selected {
-  color: #ffffff;
+  opacity: 100%;
 }
 
 .nav__link.selected::after {
@@ -201,7 +202,6 @@ body.overflow-hidden {
 
 .nav__link:hover {
   cursor: pointer;
-  color: #ffffff;
 }
 
 .nav__link--mercury::after {
@@ -556,6 +556,8 @@ body.overflow-hidden {
   font-weight: 700;
   line-height: 2.5rem;
   letter-spacing: 0.2rem;
+  background-color: rgba(216, 216, 216, 0);
+  transition: all 0.25s ease;
 }
 
 .sub-menu--tablet__link:hover {

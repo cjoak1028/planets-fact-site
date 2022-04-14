@@ -126,6 +126,8 @@
     font-weight: $font-bold;
     line-height: 2.5rem;
     letter-spacing: 0.2rem;
+    background-color: rgba(#d8d8d8, 0%);
+    transition: all 0.25s ease;
 
     &:hover {
       background-color: rgba(#d8d8d8, 20%);

@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"g9TDx":[function(require,module,exports) {
+})({"1B2dF":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "0bcb44a518dbc454";
+module.bundle.HMR_BUNDLE_ID = "207a8fdfe82f28a0";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,7 +518,7 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"1SICI":[function(require,module,exports) {
+},{}],"dV6cC":[function(require,module,exports) {
 var _model = require("./model");
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -534,7 +534,8 @@ const planetTitle = document.querySelector('.planet__title');
 const planetContent = document.querySelector('.planet__content');
 const planetContentSource = document.querySelector('.content-source__link');
 const planetStats = document.querySelectorAll('.planet-stat');
-const smallMediaQuery = window.matchMedia("(min-width: 47.9em)");
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+const mediaQueryList = window.matchMedia("screen and (min-width: 47.9em)");
 let currPlanet = 'mercury';
 let currPlanetIndex = '0';
 let currSubMenuIndex = '0';
@@ -573,7 +574,11 @@ const init = (planetsData)=>{
         hamburgerButton.classList.add('disabled');
         hamburgerMenu.classList.contains('show') ? openHamburgerMenu() : closeHamburgerMenu();
     });
-    smallMediaQuery.addEventListener('change', ()=>{
+    // Closes hamburger menu when screen size hits above small media query while menu is open
+    if (isSafari) mediaQueryList.addListener((e)=>{
+        if (e.matches) closeHamburgerMenu();
+    });
+    else mediaQueryList.addEventListener('change', ()=>{
         if (smallMediaQuery.matches) closeHamburgerMenu();
     });
     // Handle click event for each planet link
@@ -603,7 +608,6 @@ const init = (planetsData)=>{
             planetImage.classList.add(currPlanet);
             // UPDATE PLANET TITLE
             planetTitle.innerHTML = currPlanetData.name;
-            // SELECT OVERVIEW SUB-MENU
             // UPDATE PLANET STATS
             planetStats.forEach((stat)=>{
                 if (stat.classList.contains('stat-rotation')) stat.innerHTML = currPlanetData.rotation;
@@ -614,7 +618,8 @@ const init = (planetsData)=>{
             // Hamburger menu planet link for mobile view
             if (link1.classList.contains('hamburger-menu__link')) // Close hamburger menu when hamburger menu link is clicked
             closeHamburgerMenu();
-            // Select overview sub-menu by default (if not selected)
+            /////// REFACTOR (SEEMS SIMILAR TO SUBMENU LINK HANDLER) ////////
+            // Select OVERVIEW sub-menu by default (if not selected)
             if (currSubMenuIndex !== 0) {
                 // Unselect previously selected sub-menu
                 subMenuMobileLinks[currSubMenuIndex].classList.remove('selected');
@@ -628,6 +633,7 @@ const init = (planetsData)=>{
             planetGeoImage.classList.add('hide');
             planetContent.innerHTML = currPlanetData.overview.content;
             planetContentSource.href = currPlanetData.overview.source;
+        //////////////////////////////////////////////////////////////////
         });
     });
     subMenuLinks.forEach((link)=>{
@@ -713,6 +719,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["g9TDx","1SICI"], "1SICI", "parcelRequire16e4")
+},{}]},["1B2dF","dV6cC"], "dV6cC", "parcelRequire16e4")
 
-//# sourceMappingURL=index.18dbc454.js.map
+//# sourceMappingURL=index.e82f28a0.js.map
