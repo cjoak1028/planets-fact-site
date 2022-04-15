@@ -15,8 +15,8 @@
 .DS_Store
 .prettierignore
 
-# Temporary
-*.md
+README-task.md
+README-template.md
 
 node_modules
 .parcel-cache
