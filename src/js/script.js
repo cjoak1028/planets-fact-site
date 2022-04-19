@@ -26,47 +26,56 @@ let currPlanetIndex = '0';
 let currSubMenuIndex = '0';
 
 const openHamburgerMenu = () => {
-    hamburgerButton.classList.add('open');
+    hamburgerButton.classList.add("open");
     // Prevent body from scrolling when hamburger button is open
-    document.body.classList.add('overflow-hidden');
+    document.body.classList.add("overflow-hidden");
 
-    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    // Set menu height and opacity to 0
+    hamburgerMenu.classList = "hamburger-menu collapsing";
 
     setTimeout(() => {
+        // Set new height and opacity for transition (show menu)
         hamburgerMenu.style.height = `calc(100% - 6.8rem)`; //6.8rem is height of header
-        hamburgerMenu.style.opacity = '100%';
+        hamburgerMenu.style.opacity = "100%";
     }, 1);
 
     setTimeout(() => {
-        hamburgerMenu.classList = 'hamburger-menu collapse show';
-        hamburgerButton.classList.remove('disabled');
+        // Show menu once transition is finished
+        hamburgerMenu.classList = "hamburger-menu collapse show";
+        // Re-activate hamburger button
+        hamburgerButton.classList.remove("disabled");
     }, 500);
 };
 
 const closeHamburgerMenu = () => {
-    hamburgerButton.classList.remove('open');
-    document.body.classList.remove('overflow-hidden');
+    hamburgerButton.classList.remove("open");
+    document.body.classList.remove("overflow-hidden");
 
-    hamburgerMenu.classList = 'hamburger-menu collapsing';
+    // This doesn't do much here
+    hamburgerMenu.classList = "hamburger-menu collapsing";
 
+    // 
     setTimeout(() => {
-        hamburgerMenu.style.height = '0';
-        hamburgerMenu.style.opacity = '0';
+        // Set new height and opacity for transition (close menu)
+        hamburgerMenu.style.height = "0";
+        hamburgerMenu.style.opacity = "0";
     }, 1);
 
     setTimeout(() => {
-        hamburgerMenu.classList = 'hamburger-menu collapse';
-        hamburgerMenu.removeAttribute('style');
-        hamburgerButton.classList.remove('disabled');
+        // Hide menu once transition is finished
+        hamburgerMenu.classList = "hamburger-menu collapse";
+        hamburgerMenu.removeAttribute("style");
+        hamburgerButton.classList.remove("disabled");
     }, 500);
 };
 
 const init = (planetsData) => {
     // Handle click event for hamburger button
-    hamburgerButton.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('show');
-        hamburgerButton.classList.add('disabled');
-        hamburgerMenu.classList.contains('show') ? openHamburgerMenu() : closeHamburgerMenu();
+    hamburgerButton.addEventListener("click", () => {
+        hamburgerMenu.classList.toggle("show");
+        // Disable button during transition
+        hamburgerButton.classList.add("disabled");
+        hamburgerMenu.classList.contains("show") ? openHamburgerMenu() : closeHamburgerMenu();
     });
 
     // Closes hamburger menu when screen size hits above small media query while menu is open
@@ -77,8 +86,9 @@ const init = (planetsData) => {
             }
         })
     } else {
+        console.log('hello!');
         mediaQueryList.addEventListener('change', () => {
-            if (smallMediaQuery.matches) {
+            if (mediaQueryList.matches) {
                 closeHamburgerMenu();
             };
         });
