@@ -13,7 +13,6 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
@@ -261,4 +260,4 @@ To further enhance my skills in building a more seamless website, I would like t
 
 ## Acknowledgments
 
-Shoutout to [Jesse Couch](https://codepen.io/designcouch/pen/ExvwPY) for his awesome codepen profile and hamburger menu button animations!
+Shoutout to [Jesse Couch](https://codepen.io/designcouch) for his awesome codepen profile and hamburger menu button animations!
