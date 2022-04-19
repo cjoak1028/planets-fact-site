@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [LINK](https://github.com/cjoak1028/planets-fact-site)
-- Live Site URL: [LINK](https://planets-fact-site-sand.vercel.app/)
+- Solution URL: [https://github.com/cjoak1028/planets-fact-site]
+- Live Site URL: [https://planets-fact-site-sand.vercel.app/]
 
 ## My process
 
@@ -52,7 +52,7 @@ Users should be able to:
 
 For the first time, I implemented my own set of hamburger button and menu without using a third-party framework.
 
-With reference to Jesse Couch's Codepen on Hamburger Icon Animations [https://codepen.io/designcouch/pen/ExvwPY], I was able to build a hamburger button that transitioned into a 'X' button upon clicking.
+With reference to [Jesse Couch's Codepen on Hamburger Icon Animations](https://codepen.io/designcouch/pen/ExvwPY), I was able to build a hamburger button that transitioned into a 'X' button upon clicking.
 
 ```html
 <div class="hamburger-button">
@@ -139,7 +139,7 @@ const closeHamburgerMenu = () => {
 };
 ```
 
-Then I wanted the hamburger menu to have a smooth collapsing animation, so I decided to reverse-engineer Bootstrap's 'Collapse JS Plugin' [https://getbootstrap.com/docs/4.3/components/collapse/#collapsehide] and ended up with the following:
+Then, I wanted the hamburger menu to have a smooth collapsing animation, so I decided to reverse-engineer Bootstrap's ['Collapse JavaScript Plugin'](https://getbootstrap.com/docs/4.3/components/collapse/#collapsehide) and ended up with the following:
 
 ```html
 <nav class="hamburger-menu collapse">...</nav>
@@ -190,7 +190,7 @@ const closeHamburgerMenu = () => {
   // This doesn't do much here
   hamburgerMenu.classList = "hamburger-menu collapsing";
 
-  // 
+  //
   setTimeout(() => {
     // Set new height and opacity for transition (close menu)
     hamburgerMenu.style.height = "0";
@@ -210,31 +210,55 @@ hamburgerButton.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("show");
   // Disable button during transition
   hamburgerButton.classList.add("disabled");
-  hamburgerMenu.classList.contains("show") ? openHamburgerMenu() : closeHamburgerMenu();
+  hamburgerMenu.classList.contains("show")
+    ? openHamburgerMenu()
+    : closeHamburgerMenu();
 });
 ```
 
-#### MediaQueryList
+#### Media Queries in JS
 
+I wanted the hamburger menu to automatically close when viewport size hit a larger breakpoint while it was open. I figured I needed a way to use media queries within JavaScript so that I could call the closeHamburgerMenu() method. While doing some research, I came across the MediaQueryList interface and its methods and properties.
 
+First, I had to create the MediaQueryList object representing the query:
+
+```js
+const mediaQueryList = window.matchMedia("screen and (min-width: 47.9em)");
+```
+
+Then, I had to call the addEventListener() method on the MediaQueryList object, with a callback function that was invoked whenever the media query status changed. 
+
+Finally, using the matches property, I could call the closeHamburgerMenu() method whenever the hamburger menu was open and viewport width was above 47.9em.
+
+This resulted in the following:
+
+```js
+// If browser is Safari
+if (isSafari) {
+  mediaQueryList.addListener((e) => {
+    if (e.matches) {
+      closeHamburgerMenu();
+    };
+  });
+} else {
+  console.log("hello!");
+  mediaQueryList.addEventListener("change", () => {
+    if (hamburgerMenu.classList.contains("show") && mediaQueryList.matches) {
+      closeHamburgerMenu();
+    };
+  });
+};
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+To further enhance my skills in building a more seamless website, I would like to apply more CSS animations and maybe use a third-party library that will provide me with more options.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-<!-- ## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.** -->
+- [Mixin to Manage Breakpoints](https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/) - This helped me configure and manage my breakpoints.
+- [Testing Media Queries Programatically](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries) - This helpted me build my own media query tester.
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Shoutout to [Jesse Couch](https://codepen.io/designcouch/pen/ExvwPY) for his awesome codepen profile and hamburger menu button animations!

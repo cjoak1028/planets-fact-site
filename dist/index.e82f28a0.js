@@ -585,13 +585,14 @@ const init = (planetsData)=>{
         hamburgerMenu.classList.contains("show") ? openHamburgerMenu() : closeHamburgerMenu();
     });
     // Closes hamburger menu when screen size hits above small media query while menu is open
+    // If browser is Safari
     if (isSafari) mediaQueryList.addListener((e)=>{
         if (e.matches) closeHamburgerMenu();
     });
     else {
-        console.log('hello!');
-        mediaQueryList.addEventListener('change', ()=>{
-            if (mediaQueryList.matches) closeHamburgerMenu();
+        console.log("hello!");
+        mediaQueryList.addEventListener("change", ()=>{
+            if (hamburgerMenu.classList.contains("show") && mediaQueryList.matches) closeHamburgerMenu();
         });
     }
     // Handle click event for each planet link
