@@ -43,6 +43,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - SASS/SCSS
 - Flexbox
+- JavaScript ES6
 - Mobile-first workflow
 
 ### What I learned
@@ -225,7 +226,7 @@ First, I had to create the MediaQueryList object representing the query:
 const mediaQueryList = window.matchMedia("screen and (min-width: 47.9em)");
 ```
 
-Then, I had to call the addEventListener() method on the MediaQueryList object, with a callback function that was invoked whenever the media query status changed. 
+Then, I had to call the addEventListener() method on the MediaQueryList object, with a callback function that was invoked whenever the media query status changed.
 
 Finally, using the matches property, I could call the closeHamburgerMenu() method whenever the hamburger menu was open and viewport width was above 47.9em.
 
@@ -237,16 +238,16 @@ if (isSafari) {
   mediaQueryList.addListener((e) => {
     if (e.matches) {
       closeHamburgerMenu();
-    };
+    }
   });
 } else {
   console.log("hello!");
   mediaQueryList.addEventListener("change", () => {
     if (hamburgerMenu.classList.contains("show") && mediaQueryList.matches) {
       closeHamburgerMenu();
-    };
+    }
   });
-};
+}
 ```
 
 ### Continued development
