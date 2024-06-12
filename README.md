@@ -5,7 +5,6 @@ A web application that showcases all planets of our solar system.
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -25,7 +24,7 @@ A web application that showcases all planets of our solar system.
 
 ### Links
 
-- Live Site URL: Live Site[https://planets-fact-site-sand.vercel.app/]
+- Live Site URL: [https://planets-fact-site-sand.vercel.app/]
 
 ## My process
 
