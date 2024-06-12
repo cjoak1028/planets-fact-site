@@ -1,6 +1,6 @@
-# Frontend Mentor - Planets Fact Site
+# Planets Fact Site
 
-This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+A web application that showcases all planets of our solar system.
 
 ## Table of contents
 
@@ -17,14 +17,6 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
-
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
-
 ### Screenshot
 
 ![mobile gif](./screenshots/planet-facts-site-mobile.gif)
@@ -33,8 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/cjoak1028/planets-fact-site]
-- Live Site URL: [https://planets-fact-site-sand.vercel.app/]
+- Live Site URL: Live Site[https://planets-fact-site-sand.vercel.app/]
 
 ## My process
 
@@ -257,7 +248,7 @@ To further enhance my skills in building a more seamless website, I would like t
 ### Useful resources
 
 - [Mixin to Manage Breakpoints](https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/) - This helped me configure and manage my breakpoints.
-- [Testing Media Queries Programatically](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries) - This helpted me build my own media query tester.
+- [Testing Media Queries Programatically](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries) - This helped me build my own media query tester.
 
 ## Acknowledgments
 
