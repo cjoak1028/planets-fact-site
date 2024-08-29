@@ -10,7 +10,6 @@ A web application that showcases all planets of our solar system.
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Acknowledgments](#acknowledgments)
 
@@ -24,7 +23,8 @@ A web application that showcases all planets of our solar system.
 
 ### Links
 
-- Live Site URL: [https://planets-fact-site-sand.vercel.app/]
+- Solution: [Link](https://github.com/cjoak1028/planets-fact-site)
+- Live Site URL: [Link](https://planets-fact-site-sand.vercel.app/)
 
 ## My process
 
@@ -240,10 +240,6 @@ if (isSafari) {
 }
 ```
 
-### Continued development
-
-To further enhance my skills in building a more seamless website, I would like to apply more CSS animations and maybe use a third-party library that will provide me with more options.
-
 ### Useful resources
 
 - [Mixin to Manage Breakpoints](https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/) - This helped me configure and manage my breakpoints.
@@ -252,3 +248,10 @@ To further enhance my skills in building a more seamless website, I would like t
 ## Acknowledgments
 
 Shoutout to [Jesse Couch](https://codepen.io/designcouch) for his awesome codepen profile and hamburger menu button animations!
+
+## Author
+
+- Website - [CJ Kim](https://cjkim.dev/)
+- Frontend Mentor - [@cjoak1028](https://www.frontendmentor.io/profile/cjoak1028)
+- Github - [@cjoak1028](https://github.com/cjoak1028)
+- Linkedin - [CJ Kim](https://www.linkedin.com/in/cj-kim-966351255/)
